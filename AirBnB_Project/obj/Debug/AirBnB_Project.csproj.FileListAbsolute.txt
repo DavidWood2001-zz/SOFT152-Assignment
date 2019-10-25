@@ -8,3 +8,7 @@ C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Proje
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.csproj.CoreCompileInputs.cache
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.exe
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.pdb
+C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.editForm.resources
+C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.addForm.resources
+C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.deleteForm.resources
+C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.searchForm.resources
