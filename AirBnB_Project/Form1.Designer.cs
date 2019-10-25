@@ -50,6 +50,7 @@
             this.addButton.Text = "Add";
             this.addButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // searchButton
             // 
@@ -67,6 +68,7 @@
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.searchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // deleteButton
             // 
@@ -84,6 +86,7 @@
             this.deleteButton.Text = "Delete";
             this.deleteButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // editButton
             // 

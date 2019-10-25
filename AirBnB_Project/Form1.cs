@@ -28,5 +28,23 @@ namespace AirBnB_Project
             editForm edit = new editForm();
             edit.Show();
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            addForm add = new addForm();
+            add.Show();
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            searchForm search = new searchForm();
+            search.Show();
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            deleteForm delete = new deleteForm();
+            delete.Show();
+        }
     }
 }
