@@ -28,25 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.menuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // exitButton
             // 
-            this.button1.Location = new System.Drawing.Point(353, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.exitButton.Location = new System.Drawing.Point(657, 12);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(131, 57);
+            this.exitButton.TabIndex = 25;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Location = new System.Drawing.Point(337, 12);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(131, 57);
+            this.deleteButton.TabIndex = 24;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            // 
+            // menuButton
+            // 
+            this.menuButton.Location = new System.Drawing.Point(12, 12);
+            this.menuButton.Name = "menuButton";
+            this.menuButton.Size = new System.Drawing.Size(131, 57);
+            this.menuButton.TabIndex = 23;
+            this.menuButton.Text = "Menu";
+            this.menuButton.UseVisualStyleBackColor = true;
+            this.menuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // deleteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.exitButton);
+            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.menuButton);
             this.Name = "deleteForm";
             this.Text = "deleteForm";
             this.Load += new System.EventHandler(this.DeleteForm_Load);
@@ -56,6 +80,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button menuButton;
     }
 }
