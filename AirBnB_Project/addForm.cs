@@ -22,5 +22,10 @@ namespace AirBnB_Project
             Owner.Show();
             Hide();
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            //Code to add a record
+        }
     }
 }
