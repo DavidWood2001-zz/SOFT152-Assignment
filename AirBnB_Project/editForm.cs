@@ -22,10 +22,19 @@ namespace AirBnB_Project
             
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void menuButton_Click(object sender, EventArgs e)
         {
             Owner.Show();
             Hide();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Owner.Close();
         }
     }
 }
