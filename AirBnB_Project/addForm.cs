@@ -27,5 +27,10 @@ namespace AirBnB_Project
         {
             //Code to add a record
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            //Code to exit the program
+        }
     }
 }
