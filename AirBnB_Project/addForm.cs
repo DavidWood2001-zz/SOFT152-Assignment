@@ -31,6 +31,7 @@ namespace AirBnB_Project
         private void exitButton_Click(object sender, EventArgs e)
         {
             //Code to exit the program
+            Owner.Close();
         }
     }
 }
