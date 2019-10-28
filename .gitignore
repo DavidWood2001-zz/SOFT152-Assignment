@@ -1,2 +1,3 @@
 ﻿AirBnB_Project/.vs/AirBnB_Project/v16/Server/sqlite3/storage.ide-shm
 AirBnB_Project/.vs/AirBnB_Project/v16/Server/sqlite3/storage.ide-wal
+*.ide-wal
