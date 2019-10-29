@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.exitButton = new System.Windows.Forms.Button();
-            this.deleteButton = new System.Windows.Forms.Button();
+            this.deletePropertyButton = new System.Windows.Forms.Button();
             this.menuButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,15 +52,15 @@
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // deleteButton
+            // deletePropertyButton
             // 
-            this.deleteButton.Location = new System.Drawing.Point(12, 381);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(131, 57);
-            this.deleteButton.TabIndex = 24;
-            this.deleteButton.Text = "Delete Property";
-            this.deleteButton.UseVisualStyleBackColor = true;
-            this.deleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
+            this.deletePropertyButton.Location = new System.Drawing.Point(12, 381);
+            this.deletePropertyButton.Name = "deletePropertyButton";
+            this.deletePropertyButton.Size = new System.Drawing.Size(131, 57);
+            this.deletePropertyButton.TabIndex = 24;
+            this.deletePropertyButton.Text = "Delete Property";
+            this.deletePropertyButton.UseVisualStyleBackColor = true;
+            this.deletePropertyButton.Click += new System.EventHandler(this.DeletePropertyButton_Click);
             // 
             // menuButton
             // 
@@ -100,6 +100,7 @@
             this.button1.TabIndex = 28;
             this.button1.Text = "Delete Host";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.deleteHostButton_Click);
             // 
             // label3
             // 
@@ -159,7 +160,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.deletePropertyButton);
             this.Controls.Add(this.menuButton);
             this.Name = "deleteForm";
             this.Text = "deleteForm";
@@ -173,7 +174,7 @@
         #endregion
 
         private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button deletePropertyButton;
         private System.Windows.Forms.Button menuButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

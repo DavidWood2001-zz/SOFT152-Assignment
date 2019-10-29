@@ -30,6 +30,7 @@ namespace AirBnB_Project
 
         private void editButton_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("This button does not work yet", "Important", MessageBoxButtons.OK);
         }
 
         private void exitButton_Click(object sender, EventArgs e)

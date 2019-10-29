@@ -58,6 +58,7 @@
     <Compile Include="deleteForm.Designer.cs">
       <DependentUpon>deleteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="District.cs" />
     <Compile Include="editForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,8 +71,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Neighbourhood.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property.cs" />
     <Compile Include="searchForm.cs">
       <SubType>Form</SubType>
     </Compile>

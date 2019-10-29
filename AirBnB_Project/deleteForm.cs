@@ -28,14 +28,26 @@ namespace AirBnB_Project
             Hide();
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-            //Code to delete a record
-        }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Owner.Close();
+        }
+
+        private void DeletePropertyButton_Click(object sender, EventArgs e)
+        {
+            //Code to delete a property
+            doesntWork();
+        }
+
+        private void deleteHostButton_Click(object sender, EventArgs e)
+        {
+            //Code to delete a property
+            doesntWork();
+        }
+
+        public void doesntWork()
+        {
+            MessageBox.Show("This button does not work yet", "Important", MessageBoxButtons.OK);
         }
     }
 }

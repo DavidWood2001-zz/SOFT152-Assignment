@@ -25,6 +25,7 @@ namespace AirBnB_Project
         private void SearchButton_Click(object sender, EventArgs e)
         {
             //Code to search for a property
+            doesntWork();
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
@@ -36,6 +37,12 @@ namespace AirBnB_Project
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Owner.Close();
+        }
+
+        public void doesntWork()
+        {
+            InitializeComponent();
+            MessageBox.Show("This button does not work yet", "Important", MessageBoxButtons.OK);
         }
     }
 }
