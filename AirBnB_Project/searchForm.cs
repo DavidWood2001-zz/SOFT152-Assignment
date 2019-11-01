@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,39 +10,26 @@ using System.Windows.Forms;
 
 namespace AirBnB_Project
 {
-    public partial class searchForm : Form
+    public partial class searchForm: UserControl
     {
         public searchForm()
         {
             InitializeComponent();
         }
 
-        private void SearchForm_Load(object sender, EventArgs e)
+        private void PictureBox2_Click(object sender, EventArgs e)
         {
-
+            //Function to search for property
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            //Code to search for a property
-            doesntWork();
-        }
-
-        private void MenuButton_Click(object sender, EventArgs e)
-        {
-            Owner.Show();
-            Hide();
+            //Function to search for a property
         }
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Owner.Close();
-        }
-
-        public void doesntWork()
-        {
-            InitializeComponent();
-            MessageBox.Show("This button does not work yet", "Important", MessageBoxButtons.OK);
+            Application.Exit();
         }
     }
 }
