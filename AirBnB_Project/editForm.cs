@@ -26,5 +26,20 @@ namespace AirBnB_Project
         {
 
         }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            //Code to search for a property
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            //Code to add a property
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            //Code to edit a property
+        }
     }
 }
