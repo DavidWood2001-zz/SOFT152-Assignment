@@ -14,10 +14,13 @@ namespace AirBnB_Project
     {
         Control edit = new editForm();
         Control search = new searchForm();
-
+        
         public Main()
         {
             InitializeComponent();
+            panel1.Controls.Add(search);
+            panel1.Controls.Add(edit);
+            edit.BringToFront();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -32,7 +35,6 @@ namespace AirBnB_Project
         private void EditButton_Click(object sender, EventArgs e)
         {
             //when the edit button is pressed the edit form pops up
-            panel1.Controls.Add(edit);
             edit.BringToFront();
         }
 
@@ -44,7 +46,7 @@ namespace AirBnB_Project
         private void SearchButton_Click(object sender, EventArgs e)
         {
             //when the search button is pressed the search form pops up
-            panel1.Controls.Add(search);
+            
             search.BringToFront();
         }
 
