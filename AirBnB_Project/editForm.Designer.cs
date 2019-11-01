@@ -39,7 +39,20 @@
             this.searchButton = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.propertyTable = new System.Windows.Forms.DataGridView();
+            this.propertyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.propertyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hostID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hostName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numProperties = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.latitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.longitude = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.minDays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.availability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyTable)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -138,6 +151,7 @@
             this.exitButton.TabIndex = 78;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click_1);
             // 
             // searchButton
             // 
@@ -181,10 +195,122 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
+            // propertyTable
+            // 
+            this.propertyTable.BackgroundColor = System.Drawing.Color.White;
+            this.propertyTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.propertyTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.propertyID,
+            this.propertyName,
+            this.hostID,
+            this.hostName,
+            this.numProperties,
+            this.latitude,
+            this.longitude,
+            this.roomType,
+            this.price,
+            this.minDays,
+            this.availability});
+            this.propertyTable.Location = new System.Drawing.Point(23, 230);
+            this.propertyTable.Name = "propertyTable";
+            this.propertyTable.RowHeadersWidth = 51;
+            this.propertyTable.RowTemplate.Height = 24;
+            this.propertyTable.Size = new System.Drawing.Size(799, 150);
+            this.propertyTable.TabIndex = 99;
+            // 
+            // propertyID
+            // 
+            this.propertyID.HeaderText = "Property ID";
+            this.propertyID.MinimumWidth = 6;
+            this.propertyID.Name = "propertyID";
+            this.propertyID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.propertyID.Width = 80;
+            // 
+            // propertyName
+            // 
+            this.propertyName.HeaderText = "Property Name";
+            this.propertyName.MinimumWidth = 6;
+            this.propertyName.Name = "propertyName";
+            this.propertyName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.propertyName.Width = 80;
+            // 
+            // hostID
+            // 
+            this.hostID.HeaderText = "Host ID";
+            this.hostID.MinimumWidth = 6;
+            this.hostID.Name = "hostID";
+            this.hostID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.hostID.Width = 80;
+            // 
+            // hostName
+            // 
+            this.hostName.HeaderText = "Host Name";
+            this.hostName.MinimumWidth = 6;
+            this.hostName.Name = "hostName";
+            this.hostName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.hostName.Width = 60;
+            // 
+            // numProperties
+            // 
+            this.numProperties.HeaderText = "Num Properties";
+            this.numProperties.MinimumWidth = 6;
+            this.numProperties.Name = "numProperties";
+            this.numProperties.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.numProperties.Width = 90;
+            // 
+            // latitude
+            // 
+            this.latitude.HeaderText = "Latitude";
+            this.latitude.MinimumWidth = 6;
+            this.latitude.Name = "latitude";
+            this.latitude.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.latitude.Width = 80;
+            // 
+            // longitude
+            // 
+            this.longitude.HeaderText = "Longitude";
+            this.longitude.MinimumWidth = 6;
+            this.longitude.Name = "longitude";
+            this.longitude.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.longitude.Width = 80;
+            // 
+            // roomType
+            // 
+            this.roomType.HeaderText = "Room Type";
+            this.roomType.MinimumWidth = 6;
+            this.roomType.Name = "roomType";
+            this.roomType.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.roomType.Width = 60;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.price.Width = 60;
+            // 
+            // minDays
+            // 
+            this.minDays.HeaderText = "min. Days";
+            this.minDays.MinimumWidth = 6;
+            this.minDays.Name = "minDays";
+            this.minDays.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.minDays.Width = 125;
+            // 
+            // availability
+            // 
+            this.availability.HeaderText = "Availability (/365 days)";
+            this.availability.MinimumWidth = 6;
+            this.availability.Name = "availability";
+            this.availability.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.availability.Width = 125;
+            // 
             // editForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.propertyTable);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.pictureBox2);
@@ -196,11 +322,12 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.searchButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "editForm";
             this.Size = new System.Drawing.Size(847, 767);
             this.Load += new System.EventHandler(this.EditForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.propertyTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +346,17 @@
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView propertyTable;
+        private System.Windows.Forms.DataGridViewTextBoxColumn propertyID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn propertyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hostID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hostName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numProperties;
+        private System.Windows.Forms.DataGridViewTextBoxColumn latitude;
+        private System.Windows.Forms.DataGridViewTextBoxColumn longitude;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn minDays;
+        private System.Windows.Forms.DataGridViewTextBoxColumn availability;
     }
 }

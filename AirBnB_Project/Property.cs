@@ -21,10 +21,10 @@ namespace AirBnB_Project
         int minDays;
         int availability;
 
-        public Property(string inPropertyName, int inHostID, string inHostName, int inHostProperties,
+        public Property(int inPropertyID, string inPropertyName, int inHostID, string inHostName, int inHostProperties,
             double inLatitude, double inLongitude, string inType, double inPrice, int inDays, int inAvailabilty)
         {
-            propertyID = checkPropertyID(1);
+            propertyID = checkPropertyID(inPropertyID);
             propertyName = checkPropertyName(inPropertyName);
             hostID = checkHostID(inHostID);
             hostName = checkHostName(inHostName);
@@ -153,7 +153,7 @@ namespace AirBnB_Project
         }
         public int checkHostID(int inHostID)
         {
-            if (hostID > 0)
+            if (hostID >= 0)
             {
                 return inHostID;
             }
