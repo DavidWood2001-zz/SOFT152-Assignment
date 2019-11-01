@@ -88,5 +88,21 @@ namespace AirBnB_Project
             //Code to search through properties
             return string.Format("Searching properties");
         }
+
+        private void RdAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdAdd.Checked)
+            {
+                searchSelection.Visible = false;
+                txtSearch.Visible = false;
+                picSearch.Visible = false;
+            }
+            else
+            {
+                searchSelection.Visible = true;
+                txtSearch.Visible = true;
+                picSearch.Visible = true;
+            }
+        }
     }
 }

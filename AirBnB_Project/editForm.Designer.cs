@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picSearch = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.exitButton = new System.Windows.Forms.Button();
@@ -36,20 +35,9 @@
             this.rdDelete = new System.Windows.Forms.RadioButton();
             this.rdEdit = new System.Windows.Forms.RadioButton();
             this.searchSelection = new System.Windows.Forms.ComboBox();
+            this.picSearch = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picSearch
-            // 
-            this.picSearch.BackgroundImage = global::AirBnB_Project.Properties.Resources.search1;
-            this.picSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picSearch.Location = new System.Drawing.Point(652, 52);
-            this.picSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(33, 28);
-            this.picSearch.TabIndex = 85;
-            this.picSearch.TabStop = false;
-            this.picSearch.Click += new System.EventHandler(this.PicSearch_Click);
             // 
             // txtSearch
             // 
@@ -61,6 +49,7 @@
             this.txtSearch.Size = new System.Drawing.Size(417, 28);
             this.txtSearch.TabIndex = 83;
             this.txtSearch.Text = "Enter a district name";
+            this.txtSearch.Visible = false;
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
             this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearch_EnterPress);
             // 
@@ -103,6 +92,7 @@
             this.rdAdd.TabStop = true;
             this.rdAdd.Text = "Add";
             this.rdAdd.UseVisualStyleBackColor = false;
+            this.rdAdd.CheckedChanged += new System.EventHandler(this.RdAdd_CheckedChanged);
             // 
             // rdDelete
             // 
@@ -145,7 +135,21 @@
             this.searchSelection.Size = new System.Drawing.Size(188, 30);
             this.searchSelection.TabIndex = 89;
             this.searchSelection.Text = "District";
+            this.searchSelection.Visible = false;
             this.searchSelection.SelectedIndexChanged += new System.EventHandler(this.SearchSelection_SelectedIndexChanged);
+            // 
+            // picSearch
+            // 
+            this.picSearch.BackgroundImage = global::AirBnB_Project.Properties.Resources.search1;
+            this.picSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picSearch.Location = new System.Drawing.Point(652, 52);
+            this.picSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(33, 28);
+            this.picSearch.TabIndex = 85;
+            this.picSearch.TabStop = false;
+            this.picSearch.Visible = false;
+            this.picSearch.Click += new System.EventHandler(this.PicSearch_Click);
             // 
             // editForm
             // 

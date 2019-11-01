@@ -122,5 +122,14 @@
   <ItemGroup>
     <None Include="Resources\remove.jfif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search1.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.jfif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
