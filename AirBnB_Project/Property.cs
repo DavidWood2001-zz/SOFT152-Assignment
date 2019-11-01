@@ -36,78 +36,99 @@ namespace AirBnB_Project
             availability = inAvailabilty;
         }
         //GETTERS
-        private int getPropertyID()
+        public int getPropertyID()
         {
             return propertyID;
         }
-        private string getPropertyName()
+        public string getPropertyName()
         {
             return propertyName;
         }
-        private int getHostID()
+        public int getHostID()
         {
             return hostID;
         }
-        private string getHostName()
+        public string getHostName()
         {
             return hostName;
         }
-        private int getNumHostProperties()
+        public int getNumHostProperties()
         {
             return numHostProperties;
         }
-        private double getLatitude()
+        public double getLatitude()
         {
             return latitude;
         }
-        private double getLongitude()
+        public double getLongitude()
         {
             return longitude;
         }
-        private string getRoomType()
+        public string getRoomType()
         {
             return roomType;
         }
-        private double getPrice()
+        public double getPrice()
         {
             return price;
         }
-        private int getMinDays()
+        public int getMinDays()
         {
             return minDays;
         }
-        private int getAvailability()
+        public int getAvailability()
         {
             return availability;
         }
         //SETTERS
         public void setPropertyID(int inPropertyID)
         {
-            propertyID = inPropertyID;
+            if (inPropertyID > 0)
+            {
+                propertyID = inPropertyID;
+            }
         }
         public void setPropertyName(string inPropertyName)
         {
-            propertyName = inPropertyName;
+            if (inPropertyName != "")
+            {
+                propertyName = inPropertyName;
+            }
         }
         public void setHostID(int inHostID)
         {
-            hostID = inHostID;
+            if (hostID > 0)
+            {
+                hostID = inHostID;
+            }
         }
         public void setHostName(string inHostName)
         {
-            hostName = inHostName;
+            if (hostName != "")
+            {
+                hostName = inHostName;
+            }
         }
         public void setNumHostProperties(int inHostProperties)
         {
-            numHostProperties = inHostProperties;
+            if (inHostProperties > 0)
+            {
+                numHostProperties = inHostProperties;
+            }
         }
         public void setLatitude(double inLatitude)
         {
-            latitude = inLatitude;
+            if (inLatitude > 0)
+            {
+                latitude = inLatitude;
+            }
         }
         public void setLongitude(double inLongitude)
         {
-            longitude = inLongitude;
+            if (inLongitude > 0)
+            {
+                longitude = inLongitude;
+            }
         }
         public void setRoomType(string inType)
         {
@@ -115,15 +136,24 @@ namespace AirBnB_Project
         }
         public void setPrice(double inPrice)
         {
-            price = inPrice;
+            if (inPrice > 0)
+            {
+                price = inPrice;
+            }
         }
         public void setMinDays(int inDays)
         {
-            minDays = inDays;
+            if (inDays > 0)
+            {
+                minDays = inDays;
+            }
         }
         public void setAvailability(int inAvailability)
         {
-            availability = inAvailability;
+            if (inAvailability <= 365 && inAvailability > 0)
+            {
+                availability = inAvailability;
+            }
         }
     }
 }
