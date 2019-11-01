@@ -8,6 +8,7 @@ namespace AirBnB_Project
 {
     class Neighbourhood
     {
+        //ATTRIBUTES
         string name;
         int numProperties;
         Property[] arrayProperties;

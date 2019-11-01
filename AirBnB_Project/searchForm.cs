@@ -17,19 +17,75 @@ namespace AirBnB_Project
             InitializeComponent();
         }
 
-        private void PictureBox2_Click(object sender, EventArgs e)
-        {
-            //Function to search for property
-        }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            //Function to search for a property
-        }
-
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void txtSearch_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtSearch.Text = "";
+        }
+
+        private void txtSearch_EnterPress(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                chooseSearchFunction();
+            }
+        }
+        private void PicSearch_Click(object sender, EventArgs e)
+        {
+            chooseSearchFunction();
+        }
+
+        private void SearchSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (searchSelection.Text == "District")
+            {
+                txtSearch.Text = "Enter a district name";
+            }
+            else if (searchSelection.Text == "Neighbourhood")
+            {
+                txtSearch.Text = "Enter a neighbourhood name";
+            }
+            else
+            {
+                txtSearch.Text = "Enter a property name";
+            }
+        }
+        public void chooseSearchFunction()
+        {
+            string message;
+            //Code to search for a property
+            if (searchSelection.Text == "District")
+            {
+                message = searchDistrict();
+            }
+            else if (searchSelection.Text == "Neighbourhood")
+            {
+                message = searchNeighbourhood();
+            }
+            else
+            {
+                message = searchProperty();
+            }
+            MessageBox.Show(message);
+        }
+
+        public string searchDistrict()
+        {
+            //Code to search through districts
+            return string.Format("Searching districts");
+        }
+        public string searchNeighbourhood()
+        {
+            //Code to search through neighbourhoods
+            return string.Format("Searching neighbourhoods");
+        }
+        public string searchProperty()
+        {
+            //Code to search through properties
+            return string.Format("Searching properties");
         }
     }
 }

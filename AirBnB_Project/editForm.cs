@@ -22,51 +22,71 @@ namespace AirBnB_Project
             Application.Exit();
         }
 
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            //Code to search for a property
-            searchFunction();
-        }
-
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            //Code to add a property
-        }
-
-        private void BtnEdit_Click(object sender, EventArgs e)
-        {
-            //Code to edit a property
-        }
-
-        private void ExitButton_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void txtSearch_MouseClick(object sender, MouseEventArgs e)
         {
-            if (txtSearch.Text == "Enter a property name")
-            {
                 txtSearch.Text = "";
-            }
         }
 
         private void txtSearch_EnterPress(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                searchFunction();
+                chooseSearchFunction();
             }
         }
         private void PicSearch_Click(object sender, EventArgs e)
         {
-            searchFunction();
+            chooseSearchFunction();
         }
 
-        public void searchFunction()
+        private void SearchSelection_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (searchSelection.Text == "District")
+            {
+                txtSearch.Text = "Enter a district name";
+            }
+            else if (searchSelection.Text == "Neighbourhood")
+            {
+                txtSearch.Text = "Enter a neighbourhood name";
+            }
+            else
+            {
+                txtSearch.Text = "Enter a property name";
+            }
+        }
+        public void chooseSearchFunction()
+        {
+            string message;
             //Code to search for a property
-            Console.Beep();
+            if (searchSelection.Text == "District")
+            {
+                message = searchDistrict();
+            }
+            else if (searchSelection.Text == "Neighbourhood")
+            {
+                message = searchNeighbourhood();
+            }
+            else
+            {
+                message = searchProperty();
+            }
+            MessageBox.Show(message);
+        }
+
+        public string searchDistrict()
+        {
+            //Code to search through districts
+            return string.Format("Searching districts");
+        }
+        public string searchNeighbourhood()
+        {
+            //Code to search through neighbourhoods
+            return string.Format("Searching neighbourhoods");
+        }
+        public string searchProperty()
+        {
+            //Code to search through properties
+            return string.Format("Searching properties");
         }
     }
 }
