@@ -50,7 +50,7 @@ namespace AirBnB_Project
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            //when the delete button is pressed the search form pops up
+            //when the delete button is pressed the delete form pops up
         }
     }
 }
