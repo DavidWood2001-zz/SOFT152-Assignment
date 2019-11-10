@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddFile = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -55,10 +53,8 @@
             this.btnAddFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddFile.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFile.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnAddFile.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (0)))),
-                ((int) (((byte) (192)))));
+            this.btnAddFile.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btnAddFile.Location = new System.Drawing.Point(13, 495);
             this.btnAddFile.Name = "btnAddFile";
             this.btnAddFile.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -76,10 +72,8 @@
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.deleteButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (0)))),
-                ((int) (((byte) (192)))));
+            this.deleteButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.deleteButton.Location = new System.Drawing.Point(12, 336);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -92,15 +86,12 @@
             // 
             this.searchButton.AccessibleDescription = "Search Records";
             this.searchButton.BackColor = System.Drawing.Color.White;
-            this.searchButton.BackgroundImage =
-                ((System.Drawing.Image) (resources.GetObject("searchButton.BackgroundImage")));
+            this.searchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButton.BackgroundImage")));
             this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (0)))),
-                ((int) (((byte) (192)))));
+            this.searchButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.searchButton.Location = new System.Drawing.Point(12, 177);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(134, 153);
@@ -119,10 +110,8 @@
             this.editButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (0)))),
-                ((int) (((byte) (192)))));
+            this.editButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.editButton.Location = new System.Drawing.Point(13, 18);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(134, 153);
@@ -143,8 +132,7 @@
             // Main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))),
-                ((int) (((byte) (64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(794, 657);
             this.Controls.Add(this.btnAddFile);
             this.Controls.Add(this.deleteButton);
@@ -152,19 +140,19 @@
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
-        private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button editButton;

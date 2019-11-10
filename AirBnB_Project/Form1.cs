@@ -14,7 +14,7 @@ namespace AirBnB_Project
     {
         Control edit = new editForm();
         Control search = new searchForm();
-        Control addFile = new addFile();
+        Control addFile = new addFileForm();
         
         public Main()
         {

@@ -1,19 +1,24 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AirBnB_Project
 {
-    public partial class addFile : UserControl
+    public partial class addFileForm : UserControl
     {
-        public addFile()
+        public addFileForm()
         {
             InitializeComponent();
         }
 
-        private void btnAddFile_Click(object sender, EventArgs e)
+        private void BtnAddFile_Click(object sender, EventArgs e)
         {
-            //throw new System.NotImplementedException();
             int size = -1;
             DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
@@ -21,15 +26,13 @@ namespace AirBnB_Project
                 string file = openFileDialog1.FileName;
                 try
                 {
-                    string text = File.ReadAllText(file);
+                    string text = file;
                     size = text.Length;
+                    txtFilePath.Text = file;
                 }
                 catch (System.IO.IOException)
                 {
-                    string msg =
-                        "There was an issue with reading the file contents. " +
-                        "\nYour current system may not support this type of file access: 'FileDialog'";
-                    MessageBox.Show("Oopsie Whoopsy",msg, MessageBoxButtons.OK);
+                    MessageBox.Show("Error", "There was an errror with reading the file", MessageBoxButtons.OK);
                 }
             }
             Console.WriteLine(size); // <-- Shows file size in debugging mode.

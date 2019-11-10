@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addFile.cs">
+    <Compile Include="addFileForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="addFile.Designer.cs">
-      <DependentUpon>addFile.cs</DependentUpon>
+    <Compile Include="addFileForm.Designer.cs">
+      <DependentUpon>addFileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="District.cs" />
     <Compile Include="editForm.cs">
@@ -75,8 +75,8 @@
     <Compile Include="searchForm.Designer.cs">
       <DependentUpon>searchForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addFile.resx">
-      <DependentUpon>addFile.cs</DependentUpon>
+    <EmbeddedResource Include="addFileForm.resx">
+      <DependentUpon>addFileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editForm.resx">
       <DependentUpon>editForm.cs</DependentUpon>
@@ -111,25 +111,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edit.jfif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\edit1.jfif" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\edit2.jfif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.jfif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search.jfif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\remove.jfif" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\graph.jfif" />
