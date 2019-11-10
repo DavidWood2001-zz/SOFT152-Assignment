@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addFile.Designer.cs">
+      <DependentUpon>addFile.cs</DependentUpon>
+    </Compile>
     <Compile Include="District.cs" />
     <Compile Include="editForm.cs">
       <SubType>UserControl</SubType>
@@ -69,6 +75,9 @@
     <Compile Include="searchForm.Designer.cs">
       <DependentUpon>searchForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addFile.resx">
+      <DependentUpon>addFile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editForm.resx">
       <DependentUpon>editForm.cs</DependentUpon>
     </EmbeddedResource>

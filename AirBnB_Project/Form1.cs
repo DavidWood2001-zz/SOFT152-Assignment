@@ -14,12 +14,14 @@ namespace AirBnB_Project
     {
         Control edit = new editForm();
         Control search = new searchForm();
+        Control addFile = new addFile();
         
         public Main()
         {
             InitializeComponent();
             panel1.Controls.Add(search);
             panel1.Controls.Add(edit);
+            panel1.Controls.Add(addFile);
             edit.BringToFront();
         }
 
@@ -46,13 +48,14 @@ namespace AirBnB_Project
         private void SearchButton_Click(object sender, EventArgs e)
         {
             //when the search button is pressed the search form pops up
-            
+
             search.BringToFront();
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
+        private void btnAddFile_Click(object sender, EventArgs e)
         {
-            //when the delete button is pressed the delete form pops up
+            //when the add file button is pressed the add File form pops up
+            addFile.BringToFront();
         }
     }
 }
