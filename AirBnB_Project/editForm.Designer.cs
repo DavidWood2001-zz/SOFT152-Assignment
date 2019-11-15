@@ -30,23 +30,25 @@
         {
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.rdAdd = new System.Windows.Forms.RadioButton();
-            this.rdDelete = new System.Windows.Forms.RadioButton();
-            this.rdEdit = new System.Windows.Forms.RadioButton();
             this.searchSelection = new System.Windows.Forms.ComboBox();
             this.picSearch = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(228, 52);
+            this.txtSearch.Location = new System.Drawing.Point(300, 51);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(417, 28);
+            this.txtSearch.Size = new System.Drawing.Size(454, 28);
             this.txtSearch.TabIndex = 83;
             this.txtSearch.Text = "Enter a district name";
             this.txtSearch.Visible = false;
@@ -64,62 +66,6 @@
             this.label11.TabIndex = 79;
             this.label11.Text = "Property Information:";
             // 
-            // exitButton
-            // 
-            this.exitButton.BackColor = System.Drawing.Color.White;
-            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(691, 38);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(131, 57);
-            this.exitButton.TabIndex = 78;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = false;
-            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // rdAdd
-            // 
-            this.rdAdd.AutoSize = true;
-            this.rdAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rdAdd.Checked = true;
-            this.rdAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdAdd.ForeColor = System.Drawing.Color.White;
-            this.rdAdd.Location = new System.Drawing.Point(594, 135);
-            this.rdAdd.Name = "rdAdd";
-            this.rdAdd.Size = new System.Drawing.Size(66, 28);
-            this.rdAdd.TabIndex = 86;
-            this.rdAdd.TabStop = true;
-            this.rdAdd.Text = "Add";
-            this.rdAdd.UseVisualStyleBackColor = false;
-            this.rdAdd.CheckedChanged += new System.EventHandler(this.RdAdd_CheckedChanged);
-            // 
-            // rdDelete
-            // 
-            this.rdDelete.AutoSize = true;
-            this.rdDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rdDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdDelete.ForeColor = System.Drawing.Color.White;
-            this.rdDelete.Location = new System.Drawing.Point(737, 135);
-            this.rdDelete.Name = "rdDelete";
-            this.rdDelete.Size = new System.Drawing.Size(85, 28);
-            this.rdDelete.TabIndex = 87;
-            this.rdDelete.Text = "Delete";
-            this.rdDelete.UseVisualStyleBackColor = false;
-            // 
-            // rdEdit
-            // 
-            this.rdEdit.AutoSize = true;
-            this.rdEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rdEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdEdit.ForeColor = System.Drawing.Color.White;
-            this.rdEdit.Location = new System.Drawing.Point(668, 135);
-            this.rdEdit.Name = "rdEdit";
-            this.rdEdit.Size = new System.Drawing.Size(63, 28);
-            this.rdEdit.TabIndex = 88;
-            this.rdEdit.Text = "Edit";
-            this.rdEdit.UseVisualStyleBackColor = false;
-            // 
             // searchSelection
             // 
             this.searchSelection.BackColor = System.Drawing.Color.White;
@@ -132,7 +78,7 @@
             "Property"});
             this.searchSelection.Location = new System.Drawing.Point(23, 51);
             this.searchSelection.Name = "searchSelection";
-            this.searchSelection.Size = new System.Drawing.Size(188, 30);
+            this.searchSelection.Size = new System.Drawing.Size(270, 30);
             this.searchSelection.TabIndex = 89;
             this.searchSelection.Text = "District";
             this.searchSelection.Visible = false;
@@ -140,33 +86,62 @@
             // 
             // picSearch
             // 
-            this.picSearch.BackgroundImage = global::AirBnB_Project.Properties.Resources.search1;
+            this.picSearch.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_search_white_48dp;
             this.picSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picSearch.Location = new System.Drawing.Point(652, 52);
+            this.picSearch.Location = new System.Drawing.Point(761, 39);
             this.picSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(33, 28);
+            this.picSearch.Size = new System.Drawing.Size(55, 51);
             this.picSearch.TabIndex = 85;
             this.picSearch.TabStop = false;
             this.picSearch.Visible = false;
             this.picSearch.Click += new System.EventHandler(this.PicSearch_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_add_white_48dp;
+            this.pictureBox1.Location = new System.Drawing.Point(613, 120);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox1.TabIndex = 90;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_delete_forever_white_48dp;
+            this.pictureBox2.Location = new System.Drawing.Point(715, 120);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox2.TabIndex = 91;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_edit_white_48dp;
+            this.pictureBox3.Location = new System.Drawing.Point(664, 120);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox3.TabIndex = 92;
+            this.pictureBox3.TabStop = false;
+            // 
             // editForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.searchSelection);
-            this.Controls.Add(this.rdEdit);
-            this.Controls.Add(this.rdDelete);
-            this.Controls.Add(this.rdAdd);
             this.Controls.Add(this.picSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.exitButton);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "editForm";
             this.Size = new System.Drawing.Size(847, 767);
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,10 +152,9 @@
         private System.Windows.Forms.PictureBox picSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.RadioButton rdAdd;
-        private System.Windows.Forms.RadioButton rdDelete;
-        private System.Windows.Forms.RadioButton rdEdit;
         private System.Windows.Forms.ComboBox searchSelection;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }

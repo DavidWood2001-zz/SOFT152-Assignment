@@ -91,18 +91,7 @@ namespace AirBnB_Project
 
         private void RdAdd_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdAdd.Checked)
-            {
-                searchSelection.Visible = false;
-                txtSearch.Visible = false;
-                picSearch.Visible = false;
-            }
-            else
-            {
-                searchSelection.Visible = true;
-                txtSearch.Visible = true;
-                picSearch.Visible = true;
-            }
+
         }
     }
 }

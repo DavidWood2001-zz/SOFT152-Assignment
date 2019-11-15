@@ -34,12 +34,6 @@ namespace AirBnB_Project
             Application.Exit();
         }
 
-        private void EditButton_Click(object sender, EventArgs e)
-        {
-            //when the edit button is pressed the edit form pops up
-            edit.BringToFront();
-        }
-
         private void AddButton_Click(object sender, EventArgs e)
         {
             //when the add button is pressed the add form pops up

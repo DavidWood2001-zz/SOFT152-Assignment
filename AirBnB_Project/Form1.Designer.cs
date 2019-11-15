@@ -33,7 +33,6 @@
             this.btnAddFile = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
-            this.editButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,9 +48,10 @@
             // 
             this.btnAddFile.AccessibleDescription = "Load in file";
             this.btnAddFile.BackColor = System.Drawing.Color.White;
-            this.btnAddFile.BackgroundImage = global::AirBnB_Project.Properties.Resources.upload;
+            this.btnAddFile.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_note_add_black_48dp;
             this.btnAddFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAddFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddFile.FlatAppearance.BorderSize = 0;
             this.btnAddFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddFile.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -68,13 +68,14 @@
             // 
             this.deleteButton.AccessibleDescription = "Delete Records";
             this.deleteButton.BackColor = System.Drawing.Color.White;
-            this.deleteButton.BackgroundImage = global::AirBnB_Project.Properties.Resources.graph;
+            this.deleteButton.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_bar_chart_black_48dp;
             this.deleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.FlatAppearance.BorderSize = 0;
             this.deleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deleteButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.deleteButton.Location = new System.Drawing.Point(12, 336);
+            this.deleteButton.Location = new System.Drawing.Point(12, 249);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.deleteButton.Size = new System.Drawing.Size(134, 153);
@@ -86,13 +87,14 @@
             // 
             this.searchButton.AccessibleDescription = "Search Records";
             this.searchButton.BackColor = System.Drawing.Color.White;
-            this.searchButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchButton.BackgroundImage")));
+            this.searchButton.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_search_black_48dp;
             this.searchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchButton.FlatAppearance.BorderSize = 0;
             this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.searchButton.Location = new System.Drawing.Point(12, 177);
+            this.searchButton.Location = new System.Drawing.Point(13, 12);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(134, 153);
             this.searchButton.TabIndex = 3;
@@ -100,25 +102,6 @@
             this.searchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.searchButton.UseVisualStyleBackColor = false;
             this.searchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // editButton
-            // 
-            this.editButton.AccessibleDescription = "Edit a record";
-            this.editButton.AutoSize = true;
-            this.editButton.BackColor = System.Drawing.Color.White;
-            this.editButton.BackgroundImage = global::AirBnB_Project.Properties.Resources.edit2;
-            this.editButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.editButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Arial", 42F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.editButton.Location = new System.Drawing.Point(13, 18);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(134, 153);
-            this.editButton.TabIndex = 4;
-            this.editButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // pictureBox1
             // 
@@ -137,7 +120,6 @@
             this.Controls.Add(this.btnAddFile);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.editButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -148,14 +130,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button btnAddFile;

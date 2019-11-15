@@ -36,3 +36,16 @@ C:\Users\david\RiderProjects\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_
 C:\Users\david\RiderProjects\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.pdb
 C:\Users\david\RiderProjects\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.addFile.resources
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.addFileForm.resources
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\bin\Debug\AirBnB_Project.exe.config
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\bin\Debug\AirBnB_Project.exe
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\bin\Debug\AirBnB_Project.pdb
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.csprojAssemblyReference.cache
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.addFileForm.resources
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.editForm.resources
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.Main.resources
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.Properties.Resources.resources
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.searchForm.resources
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.csproj.GenerateResource.cache
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.csproj.CoreCompileInputs.cache
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.exe
+C:\Users\david\OneDrive\Desktop\SOFT152-Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.pdb
