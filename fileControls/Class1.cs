@@ -8,18 +8,6 @@ namespace fileControls
     {
         public static string[] files;
 
-        public static void ReadFile(string filePath)
-        {
-            MessageBox.Show(filePath);
-            StreamReader readFile = new StreamReader(filePath);
-            while (readFile.EndOfStream == false)
-            {
-                readFile.ReadLine();
-            }
-            readFile.Close();
-            MessageBox.Show("File Loaded");
-        }
-
         private static bool checkFilePath(string filePath, int size)
         {
             try
@@ -40,15 +28,16 @@ namespace fileControls
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.Copy;
-                files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                string files = Convert.ToString((string[])e.Data.GetData(DataFormats.FileDrop));
             }
         }
 
-        public static void UploadFile_DragDrop()
+        public static string UploadFile_DragDrop()
         {
             if (files.Length > 1)
             {
                 MessageBox.Show("You cannot drag and drop more than one file at a time.");
+                return "";
             }
 
             else
@@ -56,23 +45,32 @@ namespace fileControls
                 bool fileCorrect = checkFilePath(files[0], files.Length);
                 if (fileCorrect)
                 {
-                    ReadFile(files[0]);
+                    return files[0];
+                }
+                else
+                {
+                    return "";
                 }
             }
         }
-        public static void processFileLoad(OpenFileDialog fileDialog)
+        public static bool processFileLoad(OpenFileDialog fileDialog)
         {
             fileDialog.InitialDirectory = "C:\\Users\\dwood6\\OneDrive - University of Plymouth\\SOFT152\\Assignment";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    FileControls.ReadFile(fileDialog.FileName);
+                    return true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("There was an issue loading in your file", "ERROR!", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    return false;
                 }
+            }
+            else
+            {
+                return false;
             }
         }
     }

@@ -5,42 +5,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AirBnB_Project
+namespace fileControls
 {
     class Property
     {
         // ATTRIBUTES
-        string propertyID;
+        int propertyID;
         string propertyName;
-        string hostID;
+        int hostID;
         string hostName;
-        string numHostProperties;
-        string latitude;
-        string longitude;
+        int numHostProperties;
+        double latitude;
+        double longitude;
         string roomType;
-        string price;
-        string minDays;
-        string availability;
+        double price;
+        int minDays;
+        int availability;
 
         // CONSTRUCTOR
-        public Property(string inPropertyID, string inPropertyName, string inHostID, string inHostName, string inHostProperties,
-            string inLatitude, string inLongitude, string inType, string inPrice, string inDays, string inAvailabilty)
+        public Property(int inPropertyID, string inPropertyName, int inHostID, string inHostName, int inHostProperties,
+            double inLatitude, double inLongitude, string inType, double inPrice, int inDays, int inAvailabilty)
         {
-            propertyID = checkPropertyID(Convert.ToInt32(inPropertyID));
+            propertyID = checkPropertyID(inPropertyID);
             propertyName = checkPropertyName(inPropertyName);
-            hostID = checkHostID(Convert.ToInt32(inHostID));
+            hostID = checkHostID(inHostID);
             hostName = checkHostName(inHostName);
-            numHostProperties = checkNumHostProperties(Convert.ToInt32(inHostProperties));
-            latitude = checkLatitude(Convert.ToDouble(inLatitude));
-            longitude = checkLongitude(Convert.ToDouble(inLongitude));
+            numHostProperties = checkNumHostProperties(inHostProperties);
+            latitude = checkLatitude(inLatitude);
+            longitude = checkLongitude(inLongitude);
             roomType = checkRoomType(inType);
-            price = checkPrice(Convert.ToDouble(inPrice));
-            minDays = checkMinDays(Convert.ToInt32(inDays));
-            availability = checkAvailability(Convert.ToInt32(inAvailabilty));
+            price = checkPrice(inPrice);
+            minDays = checkMinDays(inDays);
+            availability = checkAvailability(inAvailabilty);
         }
 
         //GETTERS
-        public string getPropertyID()
+        public int getPropertyID()
         {
             return propertyID;
         }
@@ -48,7 +48,7 @@ namespace AirBnB_Project
         {
             return propertyName;
         }
-        public string getHostID()
+        public int getHostID()
         {
             return hostID;
         }
@@ -56,15 +56,15 @@ namespace AirBnB_Project
         {
             return hostName;
         }
-        public string getNumHostProperties()
+        public int getNumHostProperties()
         {
             return numHostProperties;
         }
-        public string getLatitude()
+        public double getLatitude()
         {
             return latitude;
         }
-        public string getLongitude()
+        public double getLongitude()
         {
             return longitude;
         }
@@ -72,15 +72,15 @@ namespace AirBnB_Project
         {
             return roomType;
         }
-        public string getPrice()
+        public double getPrice()
         {
             return price;
         }
-        public string getMinDays()
+        public int getMinDays()
         {
             return minDays;
         }
-        public string getAvailability()
+        public int getAvailability()
         {
             return availability;
         }
@@ -95,53 +95,53 @@ namespace AirBnB_Project
         {
             propertyName = checkPropertyName(inPropertyName);
         }
-        public void setHostID(string inHostID)
+        public void setHostID(int inHostID)
         {
-            hostID = checkHostID(Convert.ToInt32(inHostID));
+            hostID = checkHostID(inHostID);
         }
         public void setHostName(string inHostName)
         {
             hostName = checkHostName(inHostName);
         }
-        public void setNumHostProperties(string inHostProperties)
+        public void setNumHostProperties(int inHostProperties)
         {
-            numHostProperties = checkNumHostProperties(Convert.ToInt32(inHostProperties));
+            numHostProperties = checkNumHostProperties(inHostProperties);
         }
-        public void setLatitude(string inLatitude)
+        public void setLatitude(double inLatitude)
         {
-            latitude = checkLatitude(Convert.ToDouble(inLatitude));
+            latitude = checkLatitude(inLatitude);
         }
-        public void setLongitude(string inLongitude)
+        public void setLongitude(double inLongitude)
         {
-            longitude = checkLongitude(Convert.ToDouble(inLongitude));
+            longitude = checkLongitude(inLongitude);
         }
         public void setRoomType(string inType)
         {
             roomType = checkRoomType(inType);
         }
-        public void setPrice(string inPrice)
+        public void setPrice(double inPrice)
         {
-            price = checkPrice(Convert.ToDouble(inPrice));
+            price = checkPrice(inPrice);
         }
-        public void setMinDays(string inDays)
+        public void setMinDays(int inDays)
         {
-            minDays = checkMinDays(Convert.ToInt32(inDays));
+            minDays = checkMinDays(inDays);
         }
-        public void setAvailability(string inAvailability)
+        public void setAvailability(int inAvailability)
         {
-            availability = checkAvailability(Convert.ToInt32(inAvailability));
+            availability = checkAvailability(inAvailability);
         }
         //METHODS TO CHECK INPUT
-        public string checkPropertyID(int inPropertyID)
+        public int checkPropertyID(int inPropertyID)
         {
             if (inPropertyID > 0)
             {
-                return Convert.ToString(inPropertyID);
+                return inPropertyID;
             }
             else
             {
                 showErrorMessage("The property ID has to be greater than 0");
-                return "0";
+                return 0;
             }
         }
         public string checkPropertyName(string inPropertyName)
@@ -156,16 +156,16 @@ namespace AirBnB_Project
                 return string.Format("NOT GIVEN");
             }
         }
-        public string checkHostID(int inHostID)
+        public int checkHostID(int inHostID)
         {
-            if (Convert.ToInt32(hostID) >= 0)
+            if (hostID >= 0)
             {
-                return Convert.ToString(inHostID);
+                return inHostID;
             }
             else
             {
                 showErrorMessage("The host ID has to be greater than 0");
-                return "0";
+                return 0;
             }
         }
         public string checkHostName(string inHostName)
@@ -180,40 +180,40 @@ namespace AirBnB_Project
                 return string.Format("NOT GIVEN");
             }
         }
-        public string checkNumHostProperties(int inHostProperties)
+        public int checkNumHostProperties(int inHostProperties)
         {
             if (inHostProperties > 0)
             {
-                return Convert.ToString(inHostProperties);
+                return inHostProperties;
             }
             else
             {
                 showErrorMessage("The number of host properties has to be at least 1");
-                return "0";
+                return 0;
             }
         }
-        public string checkLatitude(double inLatitude)
+        public double checkLatitude(double inLatitude)
         {
-            if (inLatitude > -90 && inLatitude < 90)
+            if (inLatitude > 0)
             {
-                return Convert.ToString(inLatitude);
+                return inLatitude;
             }
             else
             {
-                showErrorMessage("Latitude has to be between -90 and 90");
-                return "0";
+                showErrorMessage("Latitude has to be greater than 0");
+                return 0;
             }
         }
-        public string checkLongitude(double inLongitude)
+        public double checkLongitude(double inLongitude)
         {
-            if (inLongitude > -180 && inLongitude < 180)
+            if (inLongitude > 0)
             {
-                return Convert.ToString(inLongitude);
+                return inLongitude;
             }
             else
             {
-                showErrorMessage("Longitude has to be between -180 and 180");
-                return "0";
+                showErrorMessage("Longitude has to be greater than 0");
+                return 0;
             }
         }
         public string checkRoomType(string inType)
@@ -228,40 +228,40 @@ namespace AirBnB_Project
                 return string.Format("NOT GIVEN");
             }
         }
-        public string checkPrice(double inPrice)
+        public double checkPrice(double inPrice)
         {
             if (inPrice > 0)
             {
-                return Convert.ToString(inPrice);
+                return inPrice;
             }
             else
             {
                 showErrorMessage("Price has to be greater than 0");
-                return "0";
+                return 0;
             }
         }
-        public string checkMinDays(int inDays)
+        public int checkMinDays(int inDays)
         {
             if (inDays > 0)
             {
-                return Convert.ToString(inDays);
+                return inDays;
             }
             else
             {
                 showErrorMessage("Min days has to be greater than 0");
-                return "0";
+                return 0;
             }
         }
-        public string checkAvailability(int inAvailability)
+        public int checkAvailability(int inAvailability)
         {
-            if (inAvailability <= 365 && inAvailability >= 0)
+            if (inAvailability <= 365 && inAvailability > 0)
             {
-                return Convert.ToString(inAvailability);
+                return inAvailability;
             }
             else
             {
-                showErrorMessage("Availability has to be greater than or equal to 0");
-                return "0";
+                showErrorMessage("Availability has to be inside of the range 0-365");
+                return 0;
             }
         }
         public void showErrorMessage(string inMessage)
