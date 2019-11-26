@@ -87,5 +87,10 @@ namespace AirBnB_Project
             //Code to search through properties
             return string.Format("Searching properties");
         }
+
+        private void SearchForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
