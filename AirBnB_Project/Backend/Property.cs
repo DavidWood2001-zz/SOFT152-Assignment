@@ -230,7 +230,7 @@ namespace AirBnB_Project
         }
         public string checkPrice(double inPrice)
         {
-            if (inPrice > 0)
+            if (inPrice >= 0)
             {
                 return Convert.ToString(inPrice);
             }

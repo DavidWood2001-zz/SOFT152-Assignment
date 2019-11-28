@@ -55,7 +55,7 @@ namespace fileControls
         }
         public static bool processFileLoad(OpenFileDialog fileDialog)
         {
-            fileDialog.InitialDirectory = "C:\\Users\\dwood6\\OneDrive - University of Plymouth\\SOFT152\\Assignment";
+            fileDialog.InitialDirectory = "../../..";
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
