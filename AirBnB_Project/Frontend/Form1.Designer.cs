@@ -33,8 +33,6 @@
             this.lblDistrict = new System.Windows.Forms.Label();
             this.lblNeighbourhood = new System.Windows.Forms.Label();
             this.lblProperty = new System.Windows.Forms.Label();
-            this.picBoxLoadFile2 = new System.Windows.Forms.PictureBox();
-            this.picBoxLoadFile = new System.Windows.Forms.PictureBox();
             this.lblLoadFile = new System.Windows.Forms.Label();
             this.lstBoxDistrict = new System.Windows.Forms.ListBox();
             this.lstBoxNeighbourhood = new System.Windows.Forms.ListBox();
@@ -61,8 +59,12 @@
             this.txtHostName = new System.Windows.Forms.TextBox();
             this.txtHostID = new System.Windows.Forms.TextBox();
             this.txtPropName = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile2)).BeginInit();
+            this.mapBox = new System.Windows.Forms.PictureBox();
+            this.picBoxLoadFile = new System.Windows.Forms.PictureBox();
+            this.picBoxLoadFile2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.mapBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile2)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -105,28 +107,6 @@
             this.lblProperty.Size = new System.Drawing.Size(105, 24);
             this.lblProperty.TabIndex = 8;
             this.lblProperty.Text = "Properties";
-            // 
-            // picBoxLoadFile2
-            // 
-            this.picBoxLoadFile2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxLoadFile2.Location = new System.Drawing.Point(12, 0);
-            this.picBoxLoadFile2.Name = "picBoxLoadFile2";
-            this.picBoxLoadFile2.Size = new System.Drawing.Size(176, 41);
-            this.picBoxLoadFile2.TabIndex = 9;
-            this.picBoxLoadFile2.TabStop = false;
-            this.picBoxLoadFile2.Click += new System.EventHandler(this.PicBoxLoadFile2_Click);
-            // 
-            // picBoxLoadFile
-            // 
-            this.picBoxLoadFile.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_note_add_black_48dp;
-            this.picBoxLoadFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picBoxLoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picBoxLoadFile.Location = new System.Drawing.Point(16, 5);
-            this.picBoxLoadFile.Name = "picBoxLoadFile";
-            this.picBoxLoadFile.Size = new System.Drawing.Size(37, 36);
-            this.picBoxLoadFile.TabIndex = 10;
-            this.picBoxLoadFile.TabStop = false;
-            this.picBoxLoadFile.Click += new System.EventHandler(this.PicBoxLoadFile_Click);
             // 
             // lblLoadFile
             // 
@@ -430,6 +410,40 @@
             this.txtPropName.Size = new System.Drawing.Size(188, 22);
             this.txtPropName.TabIndex = 36;
             // 
+            // mapBox
+            // 
+            this.mapBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mapBox.BackgroundImage = global::AirBnB_Project.Properties.Resources.NYC_map;
+            this.mapBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.mapBox.Location = new System.Drawing.Point(545, 27);
+            this.mapBox.Name = "mapBox";
+            this.mapBox.Size = new System.Drawing.Size(869, 524);
+            this.mapBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.mapBox.TabIndex = 37;
+            this.mapBox.TabStop = false;
+            // 
+            // picBoxLoadFile
+            // 
+            this.picBoxLoadFile.BackgroundImage = global::AirBnB_Project.Properties.Resources.baseline_note_add_black_48dp;
+            this.picBoxLoadFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picBoxLoadFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxLoadFile.Location = new System.Drawing.Point(16, 5);
+            this.picBoxLoadFile.Name = "picBoxLoadFile";
+            this.picBoxLoadFile.Size = new System.Drawing.Size(37, 36);
+            this.picBoxLoadFile.TabIndex = 10;
+            this.picBoxLoadFile.TabStop = false;
+            this.picBoxLoadFile.Click += new System.EventHandler(this.PicBoxLoadFile_Click);
+            // 
+            // picBoxLoadFile2
+            // 
+            this.picBoxLoadFile2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxLoadFile2.Location = new System.Drawing.Point(12, 0);
+            this.picBoxLoadFile2.Name = "picBoxLoadFile2";
+            this.picBoxLoadFile2.Size = new System.Drawing.Size(176, 41);
+            this.picBoxLoadFile2.TabIndex = 9;
+            this.picBoxLoadFile2.TabStop = false;
+            this.picBoxLoadFile2.Click += new System.EventHandler(this.PicBoxLoadFile2_Click);
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -440,6 +454,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1426, 657);
+            this.Controls.Add(this.mapBox);
             this.Controls.Add(this.txtPropName);
             this.Controls.Add(this.txtHostID);
             this.Controls.Add(this.txtHostName);
@@ -479,8 +494,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Main_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Main_DragEnter);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mapBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,6 +535,7 @@
         private System.Windows.Forms.TextBox txtHostID;
         private System.Windows.Forms.TextBox txtPropName;
         private System.Windows.Forms.ListBox lstBoxNeighbourhood;
+        private System.Windows.Forms.PictureBox mapBox;
     }
 }
 
