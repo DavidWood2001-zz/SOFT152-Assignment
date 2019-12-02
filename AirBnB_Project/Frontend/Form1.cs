@@ -179,6 +179,8 @@ namespace AirBnB_Project
             selectedDistrict = lstBoxDistrict.SelectedIndex;
             selectedNeighbourhood = 0;
             selectedProperty = 0;
+            propertyIndex = 0;
+            mapBox.Invalidate();
             setNeighbourhoodBox();
             setPropertyBox();
         }
@@ -188,12 +190,14 @@ namespace AirBnB_Project
             selectedNeighbourhood = lstBoxNeighbourhood.SelectedIndex;
             selectedProperty = 0;
             propertyIndex = 0;
+            mapBox.Invalidate();
             setPropertyBox();
         }
 
         private void LstBoxProperty_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedProperty = lstBoxProperty.SelectedIndex;
+            mapBox.Invalidate();
             setPropertyInfo();
         }
         private void setNeighbourhoodBox()
@@ -223,6 +227,10 @@ namespace AirBnB_Project
             Property[] selectedPropertyArray = selectedNeighbourhoodArray[selectedNeighbourhood].getArrayProperties();
             // Instantiate the array of property co-ords as the length of number of properties
             listOfPropsCoords = new int[selectedNeighbourhoodArray[selectedNeighbourhood].getNumProperties(), 2];
+            // Create array for topLeft location
+            double[] topLeftArray = new double[2];
+            topLeftArray[0] = 40.911288;
+            topLeftArray[1] = -74.263301;
             // For district in inLstItems
             for (int property = 0; property < selectedPropertyArray.Length; property++)
             {
@@ -230,8 +238,12 @@ namespace AirBnB_Project
                 string itemName = selectedPropertyArray[property].getPropertyName();
                 // Add the district to the specified listBox
                 lstBoxProperty.Items.Add(itemName);
-                // Add the property coords to the l
-                propertyCoords = G.calculateCoords(Convert.ToDouble(selectedPropertyArray[property].getLatitude()), Convert.ToDouble(selectedPropertyArray[property].getLongitude()), NYCLat, NYCLong, NYCCoords[0], NYCCoords[1]);
+                // Create array for property location
+                double[] propLongLats = new double[2];
+                propLongLats[0] = Convert.ToDouble(selectedPropertyArray[property].getLongitude());
+                propLongLats[1] = Convert.ToDouble(selectedPropertyArray[property].getLatitude());
+
+                propertyCoords = G.calculateCoords(topLeftArray, propLongLats, 40.489110, -73.666177, mapBox.Width, mapBox.Height);
                 listOfPropsCoords[propertyIndex, 0] = propertyCoords[0];
                 listOfPropsCoords[propertyIndex, 1] = propertyCoords[1];
                 propertyIndex += 1;
@@ -281,7 +293,8 @@ namespace AirBnB_Project
         private void MapBox_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen myPen = new Pen(Color.Red, 20);
+            Pen unselectedPen = new Pen(Color.Red, 10);
+            Pen selectedPen = new Pen(Color.Blue, 10);
 
             //g.DrawString("This is a diagonal line drawn on the control", new Font("arial", 10), Brushes.Blue, new Point(30, 30));
             //g.DrawLine(myPen, mapBox.Left, mapBox.Top, mapBox.Right, mapBox.Bottom);
@@ -289,7 +302,14 @@ namespace AirBnB_Project
             {
                 for (int curProperty = 0; curProperty < (listOfPropsCoords.Length/2); curProperty++)
                 {
-                    g.FillEllipse(myPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 10, 10));
+                    if (curProperty == selectedProperty)
+                    {
+                        g.FillEllipse(selectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
+                    }
+                    else
+                    {
+                        g.FillEllipse(unselectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
+                    }
                 }
             }
         }
