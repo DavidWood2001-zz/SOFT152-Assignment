@@ -415,12 +415,13 @@
             this.mapBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mapBox.BackgroundImage = global::AirBnB_Project.Properties.Resources.NYC_map;
             this.mapBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.mapBox.Location = new System.Drawing.Point(545, 27);
+            this.mapBox.Location = new System.Drawing.Point(728, 13);
             this.mapBox.Name = "mapBox";
-            this.mapBox.Size = new System.Drawing.Size(869, 524);
+            this.mapBox.Size = new System.Drawing.Size(562, 524);
             this.mapBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.mapBox.TabIndex = 37;
             this.mapBox.TabStop = false;
+            this.mapBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MapBox_Paint);
             // 
             // picBoxLoadFile
             // 

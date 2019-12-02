@@ -124,6 +124,10 @@
       <Project>{c59d6058-b19b-492b-a035-8631d43cbb7f}</Project>
       <Name>fileControls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GraphicsLibrary\GraphicsLibrary.csproj">
+      <Project>{624064fc-cd5d-4281-9d8f-c78b5c93c47e}</Project>
+      <Name>GraphicsLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NYC_map.png" />

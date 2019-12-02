@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using fileControls;
 using System.IO;
+using GraphicsLibrary;
 
 namespace AirBnB_Project
 {
@@ -18,10 +19,17 @@ namespace AirBnB_Project
         private int selectedNeighbourhood = 0;
         private int selectedProperty = 0;
         private District[] lstDistricts;
+        private double NYCLong = -73.979393;
+        private double NYCLat = 40.702036;
+        private int[] NYCCoords = new int[2];
+        private int[] propertyCoords = new int[2];
+        private int[,] listOfPropsCoords;
+        private int propertyIndex = 0;
 
         public Main()
         {
             InitializeComponent();
+            calculateCentre(mapBox.Width, mapBox.Height);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -30,9 +38,10 @@ namespace AirBnB_Project
             {
                 readFile(openFileDialog1.FileName);
             }
+            mapBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MapBox_Paint);
         }
         void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        { 
+        {
             Application.Exit();
         }
 
@@ -154,7 +163,7 @@ namespace AirBnB_Project
             // Clear the list box
             lstBoxDistrict.Items.Clear();
             // For district in inLstItems
-            for (int district = 0; district < lstDistricts.Length-1; district++)
+            for (int district = 0; district < lstDistricts.Length - 1; district++)
             {
                 // Get name of item
                 string itemName = lstDistricts[district].getName();
@@ -178,6 +187,7 @@ namespace AirBnB_Project
         {
             selectedNeighbourhood = lstBoxNeighbourhood.SelectedIndex;
             selectedProperty = 0;
+            propertyIndex = 0;
             setPropertyBox();
         }
 
@@ -211,6 +221,8 @@ namespace AirBnB_Project
             Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
             // Get the property array from the neighbourhood
             Property[] selectedPropertyArray = selectedNeighbourhoodArray[selectedNeighbourhood].getArrayProperties();
+            // Instantiate the array of property co-ords as the length of number of properties
+            listOfPropsCoords = new int[selectedNeighbourhoodArray[selectedNeighbourhood].getNumProperties(), 2];
             // For district in inLstItems
             for (int property = 0; property < selectedPropertyArray.Length; property++)
             {
@@ -218,6 +230,11 @@ namespace AirBnB_Project
                 string itemName = selectedPropertyArray[property].getPropertyName();
                 // Add the district to the specified listBox
                 lstBoxProperty.Items.Add(itemName);
+                // Add the property coords to the l
+                propertyCoords = G.calculateCoords(Convert.ToDouble(selectedPropertyArray[property].getLatitude()), Convert.ToDouble(selectedPropertyArray[property].getLongitude()), NYCLat, NYCLong, NYCCoords[0], NYCCoords[1]);
+                listOfPropsCoords[propertyIndex, 0] = propertyCoords[0];
+                listOfPropsCoords[propertyIndex, 1] = propertyCoords[1];
+                propertyIndex += 1;
             }
             setPropertyInfo();
         }
@@ -254,5 +271,29 @@ namespace AirBnB_Project
             txtAvailability.Text = tempAvailability;
             txtPrice.Text = tempPrice;
         }
+
+        public void calculateCentre(int width, int height)
+        {
+            NYCCoords[0] = (width / 2);
+            NYCCoords[1] = (height / 2);
+        }
+
+        private void MapBox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen myPen = new Pen(Color.Red, 20);
+
+            //g.DrawString("This is a diagonal line drawn on the control", new Font("arial", 10), Brushes.Blue, new Point(30, 30));
+            //g.DrawLine(myPen, mapBox.Left, mapBox.Top, mapBox.Right, mapBox.Bottom);
+            if (listOfPropsCoords != null)
+            {
+                for (int curProperty = 0; curProperty < (listOfPropsCoords.Length/2); curProperty++)
+                {
+                    g.FillEllipse(myPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 10, 10));
+                }
+            }
+        }
     }
 }
+
+

@@ -37,3 +37,5 @@ C:\Users\dwood6\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Proj
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\bin\Debug\fileControls.dll
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\bin\Debug\fileControls.pdb
 C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\obj\Debug\AirBnB_Project.csproj.CopyComplete
+C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\bin\Debug\GraphicsLibrary.dll
+C:\Users\david\OneDrive - University of Plymouth\SOFT152\Assignment\AirBnB_Project\bin\Debug\GraphicsLibrary.pdb

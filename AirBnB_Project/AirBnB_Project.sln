@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirBnB_Project", "AirBnB_Project.csproj", "{0E60AFB1-B323-4C8B-81A5-28C42A368310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fileControls", "..\fileControls\fileControls.csproj", "{C59D6058-B19B-492B-A035-8631D43CBB7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fileControls", "..\fileControls\fileControls.csproj", "{C59D6058-B19B-492B-A035-8631D43CBB7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphicsLibrary", "..\GraphicsLibrary\GraphicsLibrary.csproj", "{624064FC-CD5D-4281-9D8F-C78B5C93C47E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C59D6058-B19B-492B-A035-8631D43CBB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59D6058-B19B-492B-A035-8631D43CBB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59D6058-B19B-492B-A035-8631D43CBB7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624064FC-CD5D-4281-9D8F-C78B5C93C47E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624064FC-CD5D-4281-9D8F-C78B5C93C47E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624064FC-CD5D-4281-9D8F-C78B5C93C47E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624064FC-CD5D-4281-9D8F-C78B5C93C47E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
