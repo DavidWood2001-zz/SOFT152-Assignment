@@ -7,14 +7,12 @@ namespace GraphicsLibrary
     {
         public static int[] calculateCoords(double[] startLongLats, double[] propLongLat, double bottomLeftLat, double topRightLong, int width, int height)
         {
-            double xUnit = (topRightLong - startLongLats[0]) / width;
-            double yUnit = (bottomLeftLat - startLongLats[1]) / width;
-            int propX = Convert.ToInt32(propLongLat[0] * xUnit);
-            int propY = Convert.ToInt32(propLongLat[1] * yUnit);
-            int[] propCoords = new int[2];
-            propCoords[0] = propX;
-            propCoords[1] = propY;
-            return propCoords;
+            int propertyX = Convert.ToInt32((width * (startLongLats[0] - propLongLat[0])) / (startLongLats[0] - topRightLong));
+            int propertyY = Convert.ToInt32((height * (startLongLats[1] - propLongLat[1])) / (startLongLats[1] - bottomLeftLat));
+            int[] propertyCoords = new int[2];
+            propertyCoords[0] = propertyX;
+            propertyCoords[1] = propertyY;
+            return propertyCoords;
         }
 
         public static int[] extDrawLine(int[] currentCoords, int[] endCoords)

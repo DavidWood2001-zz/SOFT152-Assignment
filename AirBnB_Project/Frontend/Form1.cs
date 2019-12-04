@@ -29,7 +29,6 @@ namespace AirBnB_Project
         public Main()
         {
             InitializeComponent();
-            calculateCentre(mapBox.Width, mapBox.Height);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,7 +37,7 @@ namespace AirBnB_Project
             {
                 readFile(openFileDialog1.FileName);
             }
-            mapBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MapBox_Paint);
+            mapBox.Paint += new PaintEventHandler(this.MapBox_Paint);
         }
         void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -85,6 +84,8 @@ namespace AirBnB_Project
 
         private void readFile(string filePath)
         {
+            // Clear the property index for the map
+            propertyIndex = 0;
             // Create streamreader
             StreamReader sr = new StreamReader(filePath);
             // Set numAttributes (for property) to 11
@@ -180,7 +181,6 @@ namespace AirBnB_Project
             selectedNeighbourhood = 0;
             selectedProperty = 0;
             propertyIndex = 0;
-            mapBox.Invalidate();
             setNeighbourhoodBox();
             setPropertyBox();
         }
@@ -190,7 +190,6 @@ namespace AirBnB_Project
             selectedNeighbourhood = lstBoxNeighbourhood.SelectedIndex;
             selectedProperty = 0;
             propertyIndex = 0;
-            mapBox.Invalidate();
             setPropertyBox();
         }
 
@@ -229,8 +228,8 @@ namespace AirBnB_Project
             listOfPropsCoords = new int[selectedNeighbourhoodArray[selectedNeighbourhood].getNumProperties(), 2];
             // Create array for topLeft location
             double[] topLeftArray = new double[2];
-            topLeftArray[0] = 40.911288;
-            topLeftArray[1] = -74.263301;
+            topLeftArray[0] = -74.263301;
+            topLeftArray[1] = 40.911288;
             // For district in inLstItems
             for (int property = 0; property < selectedPropertyArray.Length; property++)
             {
@@ -248,6 +247,9 @@ namespace AirBnB_Project
                 listOfPropsCoords[propertyIndex, 1] = propertyCoords[1];
                 propertyIndex += 1;
             }
+            // Redraw the picture box
+            mapBox.Invalidate();
+            // Set the property info boxes
             setPropertyInfo();
         }
 
@@ -284,20 +286,11 @@ namespace AirBnB_Project
             txtPrice.Text = tempPrice;
         }
 
-        public void calculateCentre(int width, int height)
-        {
-            NYCCoords[0] = (width / 2);
-            NYCCoords[1] = (height / 2);
-        }
-
         private void MapBox_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
             Pen unselectedPen = new Pen(Color.Red, 10);
             Pen selectedPen = new Pen(Color.Blue, 10);
-
-            //g.DrawString("This is a diagonal line drawn on the control", new Font("arial", 10), Brushes.Blue, new Point(30, 30));
-            //g.DrawLine(myPen, mapBox.Left, mapBox.Top, mapBox.Right, mapBox.Bottom);
             if (listOfPropsCoords != null)
             {
                 for (int curProperty = 0; curProperty < (listOfPropsCoords.Length/2); curProperty++)
