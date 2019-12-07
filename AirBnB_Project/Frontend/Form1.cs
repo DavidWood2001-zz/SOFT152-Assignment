@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using fileControls;
 using System.IO;
@@ -19,12 +13,12 @@ namespace AirBnB_Project
         private int selectedNeighbourhood = 0;
         private int selectedProperty = 0;
         private District[] lstDistricts;
-        private double NYCLong = -73.979393;
-        private double NYCLat = 40.702036;
-        private int[] NYCCoords = new int[2];
         private int[] propertyCoords = new int[2];
         private int[,] listOfPropsCoords;
         private int propertyIndex = 0;
+        private bool isDragging = false;
+        private int currentX = 0;
+        private int currentY = 0;
 
         public Main()
         {
@@ -305,6 +299,44 @@ namespace AirBnB_Project
                     }
                 }
             }
+        }
+
+        private void MapBox_Click(object sender, EventArgs e)
+        {
+            mapBox.Image = PictureBoxZoom(mapBox.BackgroundImage, new Size(2,2));
+        }
+
+
+        private void MapBox_DoubleClick(object sender, EventArgs e)
+        {
+            mapBox.Image = PictureBoxZoom(mapBox.BackgroundImage, new Size(1,1));
+        }
+        public Image PictureBoxZoom(Image img, Size size)
+        {
+            Bitmap bm = new Bitmap(img, Convert.ToInt32(img.Width * size.Width), Convert.ToInt32(img.Height * size.Height));
+            Graphics grap = Graphics.FromImage(bm);
+            return bm;
+        }
+
+        private void MapBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            isDragging = true;
+            currentX = e.X;
+            currentY = e.Y;
+        }
+
+        private void MapBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mapBox.Image != null && isDragging)
+            {
+                mapBox.Top += (e.Y - currentY);
+                mapBox.Left += (e.X - currentX);
+            }
+        }
+
+        private void MapBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
         }
     }
 }
