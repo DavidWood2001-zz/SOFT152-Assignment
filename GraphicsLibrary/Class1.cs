@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace GraphicsLibrary
 {
-    public class G
+    public static class G
     {
         public static int[] calculateCoords(double[] startLongLats, double[] propLongLat, double bottomLeftLat, double topRightLong, int width, int height)
         {

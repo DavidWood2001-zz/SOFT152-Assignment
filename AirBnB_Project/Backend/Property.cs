@@ -225,7 +225,7 @@ namespace AirBnB_Project
             catch (Exception e)
             {
                 showErrorMessage(e.Message);
-                return string.Format("NOT GIVEN");
+                return "NOT GIVEN";
             }
         }
         public string checkPrice(double inPrice)

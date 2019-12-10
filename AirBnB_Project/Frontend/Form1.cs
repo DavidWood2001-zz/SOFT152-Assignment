@@ -16,9 +16,6 @@ namespace AirBnB_Project
         private int[] propertyCoords = new int[2];
         private int[,] listOfPropsCoords;
         private int propertyIndex = 0;
-        private bool isDragging = false;
-        private int currentX = 0;
-        private int currentY = 0;
 
         public Main()
         {
@@ -33,12 +30,12 @@ namespace AirBnB_Project
             }
             mapBox.Paint += new PaintEventHandler(this.MapBox_Paint);
         }
-        void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        static void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void Main_DragEnter(object sender, DragEventArgs e)
+        private static void Main_DragEnter(object sender, DragEventArgs e)
         {
             FileControls.UploadFile_DragEnter(e);
         }

@@ -6,14 +6,14 @@ namespace fileControls
 {
     public static class FileControls
     {
-        public static string[] files;
+        public static readonly string[] files;
 
-        private static bool checkFilePath(string filePath, int size)
+        private static bool checkFilePath(string filePath)
         {
             try
             {
                 string text = filePath;
-                size = text.Length;
+                int size = text.Length;
                 return true;
             }
             catch (System.IO.IOException)
@@ -42,7 +42,7 @@ namespace fileControls
 
             else
             {
-                bool fileCorrect = checkFilePath(files[0], files.Length);
+                bool fileCorrect = checkFilePath(files[0]);
                 if (fileCorrect)
                 {
                     return files[0];
