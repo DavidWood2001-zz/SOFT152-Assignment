@@ -10,7 +10,7 @@ namespace AirBnB_Project
     {
         //ATTRIBUTES
         string name;
-        int numProperties;
+        readonly int numProperties;
         Property[] arrayProperties;
 
         //CONSTRUCTOR

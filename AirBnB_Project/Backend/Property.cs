@@ -132,7 +132,7 @@ namespace AirBnB_Project
             availability = checkAvailability(Convert.ToInt32(inAvailability));
         }
         //METHODS TO CHECK INPUT
-        public string checkPropertyID(int inPropertyID)
+        public static string checkPropertyID(int inPropertyID)
         {
             if (inPropertyID > 0)
             {
@@ -144,7 +144,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkPropertyName(string inPropertyName)
+        public static string checkPropertyName(string inPropertyName)
         {
             if (inPropertyName != "")
             {
@@ -153,12 +153,12 @@ namespace AirBnB_Project
             else
             {
                 showErrorMessage("The properties name cannot be empty");
-                return string.Format("NOT GIVEN");
+                return "NOT GIVEN";
             }
         }
-        public string checkHostID(int inHostID)
+        public static string checkHostID(int inHostID)
         {
-            if (Convert.ToInt32(hostID) >= 0)
+            if (Convert.ToInt32(inHostID) >= 0)
             {
                 return Convert.ToString(inHostID);
             }
@@ -168,9 +168,9 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkHostName(string inHostName)
+        public static string checkHostName(string inHostName)
         {
-            if (hostName != "")
+            if (inHostName != "")
             {
                 return inHostName;
             }
@@ -180,7 +180,7 @@ namespace AirBnB_Project
                 return string.Format("NOT GIVEN");
             }
         }
-        public string checkNumHostProperties(int inHostProperties)
+        public static string checkNumHostProperties(int inHostProperties)
         {
             if (inHostProperties > 0)
             {
@@ -192,7 +192,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkLatitude(double inLatitude)
+        public static string checkLatitude(double inLatitude)
         {
             if (inLatitude > -90 && inLatitude < 90)
             {
@@ -204,7 +204,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkLongitude(double inLongitude)
+        public static string checkLongitude(double inLongitude)
         {
             if (inLongitude > -180 && inLongitude < 180)
             {
@@ -216,7 +216,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkRoomType(string inType)
+        public static string checkRoomType(string inType)
         {
             try
             {
@@ -228,7 +228,7 @@ namespace AirBnB_Project
                 return "NOT GIVEN";
             }
         }
-        public string checkPrice(double inPrice)
+        public static string checkPrice(double inPrice)
         {
             if (inPrice >= 0)
             {
@@ -240,7 +240,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkMinDays(int inDays)
+        public static string checkMinDays(int inDays)
         {
             if (inDays > 0)
             {
@@ -252,7 +252,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public string checkAvailability(int inAvailability)
+        public static string checkAvailability(int inAvailability)
         {
             if (inAvailability <= 365 && inAvailability >= 0)
             {

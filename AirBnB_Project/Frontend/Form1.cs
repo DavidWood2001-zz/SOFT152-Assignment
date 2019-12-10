@@ -124,8 +124,6 @@ namespace AirBnB_Project
                             lstProperties[property] = new Property(propAttributes[0], propAttributes[1], propAttributes[2], propAttributes[3],
                                 propAttributes[4], propAttributes[5], propAttributes[6], propAttributes[7], propAttributes[8], propAttributes[9],
                                 propAttributes[10]);
-                            // DEBUG 
-                            //MessageBox.Show(Convert.ToString(lstProperties[property]));
                             // Next property
                         }
                         // Create neighbourhood object using name, numProperties and the property array
@@ -136,8 +134,6 @@ namespace AirBnB_Project
                     // Create district object using district name, numNeighbourhoods and the neighbourhood array
                     // And add to the district array
                     lstDistricts[districtIndex] = new District(districtName, lstNeighbourhoods);
-                    // DEBUG
-                    // MessageBox.Show(lstDistricts[districtIndex].getName()); ;
                     // Resize array to current size plus 1
                     Array.Resize(ref lstDistricts, lstDistricts.Length + 1);
                     //increment the districts index
@@ -146,6 +142,7 @@ namespace AirBnB_Project
                 }
                 // End while
             }
+            sr.Dispose();
             setDistrictBox();
         }
 

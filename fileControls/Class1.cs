@@ -6,14 +6,13 @@ namespace fileControls
 {
     public static class FileControls
     {
-        public static readonly string[] files;
+        public static string[] files;
 
         private static bool checkFilePath(string filePath)
         {
             try
             {
                 string text = filePath;
-                int size = text.Length;
                 return true;
             }
             catch (System.IO.IOException)
@@ -28,7 +27,7 @@ namespace fileControls
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.Copy;
-                string files = Convert.ToString((string[])e.Data.GetData(DataFormats.FileDrop));
+                files = (string[])e.Data.GetData(DataFormats.FileDrop);
             }
         }
 
