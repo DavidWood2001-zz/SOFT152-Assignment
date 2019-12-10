@@ -421,12 +421,7 @@
             this.mapBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.mapBox.TabIndex = 37;
             this.mapBox.TabStop = false;
-            this.mapBox.Click += new System.EventHandler(this.MapBox_Click);
             this.mapBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MapBox_Paint);
-            this.mapBox.DoubleClick += new System.EventHandler(this.MapBox_DoubleClick);
-            this.mapBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MapBox_MouseDown);
-            this.mapBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MapBox_MouseMove);
-            this.mapBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MapBox_MouseUp);
             // 
             // picBoxLoadFile
             // 

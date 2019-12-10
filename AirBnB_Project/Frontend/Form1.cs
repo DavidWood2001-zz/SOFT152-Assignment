@@ -10,12 +10,12 @@ namespace AirBnB_Project
     public partial class Main : Form
     {
         private int selectedDistrict;
-        private int selectedNeighbourhood = 0;
-        private int selectedProperty = 0;
+        private int selectedNeighbourhood;
+        private int selectedProperty;
         private District[] lstDistricts;
         private int[] propertyCoords = new int[2];
         private int[,] listOfPropsCoords;
-        private int propertyIndex = 0;
+        private int propertyIndex;
 
         public Main()
         {
@@ -35,7 +35,7 @@ namespace AirBnB_Project
             Application.Exit();
         }
 
-        private static void Main_DragEnter(object sender, DragEventArgs e)
+        private void Main_DragEnter(object sender, DragEventArgs e)
         {
             FileControls.UploadFile_DragEnter(e);
         }
