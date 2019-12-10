@@ -20,6 +20,9 @@ namespace AirBnB_Project
         public Main()
         {
             InitializeComponent();
+            comboDelete.Items.Add("District");
+            comboDelete.Items.Add("Neighbourhood");
+            comboDelete.Items.Add("Property");
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -171,6 +174,7 @@ namespace AirBnB_Project
             propertyIndex = 0;
             setNeighbourhoodBox();
             setPropertyBox();
+            setTxtDelete();
         }
 
         private void LstBoxNeighbourhood_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +183,7 @@ namespace AirBnB_Project
             selectedProperty = 0;
             propertyIndex = 0;
             setPropertyBox();
+            setTxtDelete();
         }
 
         private void LstBoxProperty_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,6 +191,7 @@ namespace AirBnB_Project
             selectedProperty = lstBoxProperty.SelectedIndex;
             mapBox.Invalidate();
             setPropertyInfo();
+            setTxtDelete();
         }
         private void setNeighbourhoodBox()
         {
@@ -292,6 +298,32 @@ namespace AirBnB_Project
                         g.FillEllipse(unselectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
                     }
                 }
+            }
+        }
+
+        private void ComboDelete_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setTxtDelete();
+        }
+
+        private void setTxtDelete()
+        {
+            District curDistrict = lstDistricts[selectedDistrict];
+            Neighbourhood[] curNeighbourhoodArray = curDistrict.getArrayNeighbourhoods();
+            Neighbourhood curNeighbourhood = curNeighbourhoodArray[selectedNeighbourhood];
+            Property[] curPropertyArray = curNeighbourhood.getArrayProperties();
+            Property curProperty = curPropertyArray[selectedProperty];
+            if (comboDelete.SelectedIndex == 0)
+            {
+                txtDelete.Text = curDistrict.getName();
+            }
+            else if (comboDelete.SelectedIndex == 1)
+            {
+                txtDelete.Text = curNeighbourhood.getName();
+            }
+            else if (comboDelete.SelectedIndex == 2)
+            {
+                txtDelete.Text = curProperty.getPropertyName();
             }
         }
     }
