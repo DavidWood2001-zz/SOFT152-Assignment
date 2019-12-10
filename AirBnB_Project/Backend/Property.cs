@@ -264,7 +264,7 @@ namespace AirBnB_Project
                 return "0";
             }
         }
-        public void showErrorMessage(string inMessage)
+        public static void showErrorMessage(string inMessage)
         {
             //Shows a pop-up error message if a user causes an issue
             MessageBox.Show(inMessage);

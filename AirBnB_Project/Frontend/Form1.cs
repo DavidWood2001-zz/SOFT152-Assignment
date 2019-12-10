@@ -300,44 +300,6 @@ namespace AirBnB_Project
                 }
             }
         }
-
-        private void MapBox_Click(object sender, EventArgs e)
-        {
-            mapBox.Image = PictureBoxZoom(mapBox.BackgroundImage, new Size(2,2));
-        }
-
-
-        private void MapBox_DoubleClick(object sender, EventArgs e)
-        {
-            mapBox.Image = PictureBoxZoom(mapBox.BackgroundImage, new Size(1,1));
-        }
-        public Image PictureBoxZoom(Image img, Size size)
-        {
-            Bitmap bm = new Bitmap(img, Convert.ToInt32(img.Width * size.Width), Convert.ToInt32(img.Height * size.Height));
-            Graphics grap = Graphics.FromImage(bm);
-            return bm;
-        }
-
-        private void MapBox_MouseDown(object sender, MouseEventArgs e)
-        {
-            isDragging = true;
-            currentX = e.X;
-            currentY = e.Y;
-        }
-
-        private void MapBox_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mapBox.Image != null && isDragging)
-            {
-                mapBox.Top += (e.Y - currentY);
-                mapBox.Left += (e.X - currentX);
-            }
-        }
-
-        private void MapBox_MouseUp(object sender, MouseEventArgs e)
-        {
-            isDragging = false;
-        }
     }
 }
 
