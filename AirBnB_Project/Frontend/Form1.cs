@@ -9,6 +9,7 @@ namespace AirBnB_Project
 {
     public partial class Main : Form
     {
+        #region attributes
         private int selectedDistrict;
         private int selectedNeighbourhood;
         private int selectedProperty;
@@ -17,6 +18,9 @@ namespace AirBnB_Project
         private int[,] listOfPropsCoords;
         private int propertyIndex;
 
+        #endregion attributes
+
+        #region constructor
         public Main()
         {
             InitializeComponent();
@@ -24,6 +28,9 @@ namespace AirBnB_Project
             comboDelete.Items.Add("Neighbourhood");
             comboDelete.Items.Add("Property");
         }
+        #endregion constructor
+
+        #region metthods
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
@@ -38,6 +45,7 @@ namespace AirBnB_Project
             Application.Exit();
         }
 
+        #region fileInput
         private void Main_DragEnter(object sender, DragEventArgs e)
         {
             FileControls.UploadFile_DragEnter(e);
@@ -75,6 +83,10 @@ namespace AirBnB_Project
                 readFile(openFileDialog1.FileName);
             }
         }
+
+        #endregion fileInput
+
+        #region readFile
 
         private void readFile(string filePath)
         {
@@ -149,23 +161,9 @@ namespace AirBnB_Project
             setDistrictBox();
         }
 
-        private void setDistrictBox()
-        {
-            //SET THE LIST BOX
-            // Clear the list box
-            lstBoxDistrict.Items.Clear();
-            // For district in inLstItems
-            for (int district = 0; district < lstDistricts.Length - 1; district++)
-            {
-                // Get name of item
-                string itemName = lstDistricts[district].getName();
-                // Add the district to the specified listBox
-                lstBoxDistrict.Items.Add(itemName);
-            }
-            setNeighbourhoodBox();
-            setPropertyBox();
-        }
+        #endregion readFile
 
+        #region setInfo
         private void LstBoxDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedDistrict = lstBoxDistrict.SelectedIndex;
@@ -193,6 +191,29 @@ namespace AirBnB_Project
             setPropertyInfo();
             setTxtDelete();
         }
+
+        private void ComboDelete_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setTxtDelete();
+        }
+
+        private void setDistrictBox()
+        {
+            //SET THE LIST BOX
+            // Clear the list box
+            lstBoxDistrict.Items.Clear();
+            // For district in inLstItems
+            for (int district = 0; district < lstDistricts.Length - 1; district++)
+            {
+                // Get name of item
+                string itemName = lstDistricts[district].getName();
+                // Add the district to the specified listBox
+                lstBoxDistrict.Items.Add(itemName);
+            }
+            setNeighbourhoodBox();
+            setPropertyBox();
+        }
+
         private void setNeighbourhoodBox()
         {
             //SET THE LIST BOX
@@ -280,32 +301,6 @@ namespace AirBnB_Project
             txtPrice.Text = tempPrice;
         }
 
-        private void MapBox_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            Pen unselectedPen = new Pen(Color.Red, 10);
-            Pen selectedPen = new Pen(Color.Blue, 10);
-            if (listOfPropsCoords != null)
-            {
-                for (int curProperty = 0; curProperty < (listOfPropsCoords.Length/2); curProperty++)
-                {
-                    if (curProperty == selectedProperty)
-                    {
-                        g.FillEllipse(selectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
-                    }
-                    else
-                    {
-                        g.FillEllipse(unselectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
-                    }
-                }
-            }
-        }
-
-        private void ComboDelete_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            setTxtDelete();
-        }
-
         private void setTxtDelete()
         {
             District curDistrict = lstDistricts[selectedDistrict];
@@ -326,6 +321,33 @@ namespace AirBnB_Project
                 txtDelete.Text = curProperty.getPropertyName();
             }
         }
+
+        #endregion setInfo
+
+        #region map
+        private void MapBox_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen unselectedPen = new Pen(Color.Red, 10);
+            Pen selectedPen = new Pen(Color.Blue, 10);
+            if (listOfPropsCoords != null)
+            {
+                for (int curProperty = 0; curProperty < (listOfPropsCoords.Length/2); curProperty++)
+                {
+                    if (curProperty == selectedProperty)
+                    {
+                        g.FillEllipse(selectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
+                    }
+                    else
+                    {
+                        g.FillEllipse(unselectedPen.Brush, new Rectangle(listOfPropsCoords[curProperty, 0], listOfPropsCoords[curProperty, 1], 5, 5));
+                    }
+                }
+            }
+        }
+        #endregion map
+
+        #endregion methods
     }
 }
 
