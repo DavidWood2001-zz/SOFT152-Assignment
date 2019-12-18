@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj": {}
+    "C:\\Users\\david\\OneDrive - University of Plymouth\\SOFT152\\Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj": {
+    "C:\\Users\\david\\OneDrive - University of Plymouth\\SOFT152\\Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\david\\OneDrive - University of Plymouth\\SOFT152\\Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj",
         "projectName": "GraphicsLibrary",
-        "projectPath": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj",
-        "packagesPath": "C:\\Users\\dwood6\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\obj\\",
+        "projectPath": "C:\\Users\\david\\OneDrive - University of Plymouth\\SOFT152\\Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj",
+        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\david\\OneDrive - University of Plymouth\\SOFT152\\Assignment\\GraphicsLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dwood6\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
