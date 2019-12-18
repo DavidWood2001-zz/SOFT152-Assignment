@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj": {}
+    "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj": {
+    "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj",
+        "projectUniqueName": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj",
         "projectName": "GraphicsLibrary",
-        "projectPath": "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\GraphicsLibrary\\GraphicsLibrary.csproj",
+        "projectPath": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\GraphicsLibrary.csproj",
         "packagesPath": "C:\\Users\\dwood6\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\GraphicsLibrary\\obj\\",
+        "outputPath": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\GraphicsLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -8,12 +8,15 @@ namespace AirBnB_Project
 {
     class Neighbourhood
     {
-        //ATTRIBUTES
+        #region attributes
+
         string name;
         readonly int numProperties;
         Property[] arrayProperties;
 
-        //CONSTRUCTOR
+        #endregion attributes
+
+        #region constructors
         public Neighbourhood(string inName, Property[] inArrayProperties)
         {
             name = inName;
@@ -21,7 +24,9 @@ namespace AirBnB_Project
             arrayProperties = inArrayProperties;
         }
 
-        //GETTERS
+        #endregion constructors
+
+        #region getters
         public string getName()
         {
             return name;
@@ -34,7 +39,11 @@ namespace AirBnB_Project
         {
             return arrayProperties;
         }
-        //SETTERS
+
+        #endregion getters
+
+        #region setters
+
         public void setName(string inName)
         {
             name = inName;
@@ -43,5 +52,7 @@ namespace AirBnB_Project
         {
             arrayProperties = inArrayProperties;
         }
+
+        #endregion setters
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\fileControls\\fileControls.csproj": {}
+    "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\fileControls\\fileControls.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\fileControls\\fileControls.csproj": {
+    "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\fileControls\\fileControls.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\fileControls\\fileControls.csproj",
+        "projectUniqueName": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\fileControls\\fileControls.csproj",
         "projectName": "fileControls",
-        "projectPath": "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\fileControls\\fileControls.csproj",
+        "projectPath": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\fileControls\\fileControls.csproj",
         "packagesPath": "C:\\Users\\dwood6\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dwood6\\Desktop\\tempFolder\\SOFT152-Assignment\\fileControls\\obj\\",
+        "outputPath": "C:\\Users\\dwood6\\Desktop\\TEMPFOLDER\\fileControls\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
