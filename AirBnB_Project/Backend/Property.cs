@@ -177,7 +177,7 @@ namespace AirBnB_Project
             else
             {
                 showErrorMessage("The host name cannot be empty");
-                return "NOT GIVEN";
+                return string.Format("NOT GIVEN");
             }
         }
         public static string checkNumHostProperties(int inHostProperties)

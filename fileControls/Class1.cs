@@ -6,12 +6,13 @@ namespace fileControls
 {
     public static class FileControls
     {
-        private static string[] files;
+        public static string[] files;
 
         private static bool checkFilePath(string filePath)
         {
             try
             {
+                string text = filePath;
                 return true;
             }
             catch (System.IO.IOException)
