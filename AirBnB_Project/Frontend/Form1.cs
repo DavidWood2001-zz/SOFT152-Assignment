@@ -30,10 +30,12 @@ namespace AirBnB_Project
             }
             mapBox.Paint += new PaintEventHandler(this.MapBox_Paint);
         }
+
         static void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
         #region LoadFile
         private static void Main_DragEnter(object sender, DragEventArgs e)
         {
@@ -155,8 +157,11 @@ namespace AirBnB_Project
             selectedNeighbourhood = 0;
             selectedProperty = 0;
             propertyIndex = 0;
-            setNeighbourhoodBox();
-            setPropertyBox();
+            if (lstBoxNeighbourhood.Items != null)
+            {
+                setNeighbourhoodBox();
+                setPropertyBox();
+            }
         }
 
         private void LstBoxNeighbourhood_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,7 +169,10 @@ namespace AirBnB_Project
             selectedNeighbourhood = lstBoxNeighbourhood.SelectedIndex;
             selectedProperty = 0;
             propertyIndex = 0;
-            setPropertyBox();
+            if (lstBoxProperty.Items != null)
+            {
+                setPropertyBox();
+            }
         }
 
         private void LstBoxProperty_SelectedIndexChanged(object sender, EventArgs e)
@@ -277,6 +285,8 @@ namespace AirBnB_Project
             txtPrice.Text = tempPrice;
         }
         #endregion setInformation
+
+        #region map
         private void MapBox_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -297,20 +307,43 @@ namespace AirBnB_Project
                 }
             }
         }
+
+        #endregion map
+
         #region addClick
         private void BtnAddDistrict_Click(object sender, EventArgs e)
         {
             //Add a district
+            if (txtDistrictName.Text != "")
+            {
+                lstBoxDistrict.Items.Add(txtDistrictName.Text);
+                Array.Resize(ref lstDistricts, lstDistricts.Length + 1);
+                lstDistricts[lstDistricts.Length-1] = new District(txtDistrictName.Text, new Neighbourhood[0]);
+            }
         }
 
         private void BtnAddNeighbourhood_Click(object sender, EventArgs e)
         {
             //Add a neighbourhood
+            if (txtNeighbourhoodName.Text != "")
+            {
+                lstBoxNeighbourhood.Items.Add(txtNeighbourhoodName.Text);
+                Neighbourhood[] lstOfNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                Array.Resize(ref lstOfNeighbourhoods, lstOfNeighbourhoods.Length + 1);
+                lstOfNeighbourhoods[lstOfNeighbourhoods.Length - 1] = new Neighbourhood(txtNeighbourhoodName.Text, new Property[0]);
+            }
         }
 
         private void BtnAddProperty_Click(object sender, EventArgs e)
         {
             //Add a property
+            if (txtPropName.Text == "")
+            {
+                Neighbourhood[] lstOfNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                Property[] lstOfProperties = lstOfNeighbourhoods[selectedNeighbourhood].getArrayProperties();
+                Array.Resize(ref lstOfProperties, lstOfProperties.Length + 1);
+                lstOfProperties[lstOfProperties.Length - 1] = new Property(txtPropID.Text, txtPropName.Text, txtHostID.Text, txtHostName.Text, txtNumProps.Text, txtLatitude.Text, txtLongitude.Text, txtRoomType.Text, txtPrice.Text, txtMinStays.Text, txtAvailability.Text);
+            }
         }
         #endregion addClick
 
