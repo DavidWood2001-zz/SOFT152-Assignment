@@ -34,7 +34,7 @@ namespace AirBnB_Project
         {
             Application.Exit();
         }
-
+        #region LoadFile
         private static void Main_DragEnter(object sender, DragEventArgs e)
         {
             FileControls.UploadFile_DragEnter(e);
@@ -72,7 +72,6 @@ namespace AirBnB_Project
                 readFile(openFileDialog1.FileName);
             }
         }
-
         private void readFile(string filePath)
         {
             // Clear the property index for the map
@@ -146,22 +145,9 @@ namespace AirBnB_Project
             setDistrictBox();
         }
 
-        private void setDistrictBox()
-        {
-            //SET THE LIST BOX
-            // Clear the list box
-            lstBoxDistrict.Items.Clear();
-            // For district in inLstItems
-            for (int district = 0; district < lstDistricts.Length - 1; district++)
-            {
-                // Get name of item
-                string itemName = lstDistricts[district].getName();
-                // Add the district to the specified listBox
-                lstBoxDistrict.Items.Add(itemName);
-            }
-            setNeighbourhoodBox();
-            setPropertyBox();
-        }
+        #endregion ReadFile
+
+        #region setInformation
 
         private void LstBoxDistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -186,6 +172,23 @@ namespace AirBnB_Project
             selectedProperty = lstBoxProperty.SelectedIndex;
             mapBox.Invalidate();
             setPropertyInfo();
+        }
+
+        private void setDistrictBox()
+        {
+            //SET THE LIST BOX
+            // Clear the list box
+            lstBoxDistrict.Items.Clear();
+            // For district in inLstItems
+            for (int district = 0; district < lstDistricts.Length - 1; district++)
+            {
+                // Get name of item
+                string itemName = lstDistricts[district].getName();
+                // Add the district to the specified listBox
+                lstBoxDistrict.Items.Add(itemName);
+            }
+            setNeighbourhoodBox();
+            setPropertyBox();
         }
         private void setNeighbourhoodBox()
         {
@@ -273,7 +276,7 @@ namespace AirBnB_Project
             txtAvailability.Text = tempAvailability;
             txtPrice.Text = tempPrice;
         }
-
+        #endregion setInformation
         private void MapBox_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -294,6 +297,45 @@ namespace AirBnB_Project
                 }
             }
         }
+        #region addClick
+        private void BtnAddDistrict_Click(object sender, EventArgs e)
+        {
+            //Add a district
+        }
+
+        private void BtnAddNeighbourhood_Click(object sender, EventArgs e)
+        {
+            //Add a neighbourhood
+        }
+
+        private void BtnAddProperty_Click(object sender, EventArgs e)
+        {
+            //Add a property
+        }
+        #endregion addClick
+
+        #region deleteClick
+        private void BtnDeleteDistrict_Click(object sender, EventArgs e)
+        {
+            //Delete a district
+        }
+
+        private void BtnDeleteNeighbourhood_Click(object sender, EventArgs e)
+        {
+            //Delete a neighbourhood
+        }
+        private void BtnDeleteProperty_Click(object sender, EventArgs e)
+        {
+            //Delete a property
+        }
+        #endregion deleteClick
+
+        #region editCLick
+        private void BtnEditProperty_Click(object sender, EventArgs e)
+        {
+            //Edit a property
+        }
+        #endregion editClick
     }
 }
 

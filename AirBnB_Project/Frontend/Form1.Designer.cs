@@ -62,6 +62,13 @@
             this.mapBox = new System.Windows.Forms.PictureBox();
             this.picBoxLoadFile = new System.Windows.Forms.PictureBox();
             this.picBoxLoadFile2 = new System.Windows.Forms.PictureBox();
+            this.btnAddProperty = new System.Windows.Forms.Button();
+            this.btnEditProperty = new System.Windows.Forms.Button();
+            this.btnDeleteProperty = new System.Windows.Forms.Button();
+            this.btnDeleteNeighbourhood = new System.Windows.Forms.Button();
+            this.btnAddNeighbourhood = new System.Windows.Forms.Button();
+            this.btnDeleteDistrict = new System.Windows.Forms.Button();
+            this.btnAddDistrict = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mapBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile2)).BeginInit();
@@ -90,7 +97,7 @@
             this.lblNeighbourhood.AutoSize = true;
             this.lblNeighbourhood.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNeighbourhood.ForeColor = System.Drawing.Color.White;
-            this.lblNeighbourhood.Location = new System.Drawing.Point(13, 245);
+            this.lblNeighbourhood.Location = new System.Drawing.Point(13, 304);
             this.lblNeighbourhood.Name = "lblNeighbourhood";
             this.lblNeighbourhood.Size = new System.Drawing.Size(167, 24);
             this.lblNeighbourhood.TabIndex = 7;
@@ -102,7 +109,7 @@
             this.lblProperty.AutoSize = true;
             this.lblProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProperty.ForeColor = System.Drawing.Color.White;
-            this.lblProperty.Location = new System.Drawing.Point(13, 446);
+            this.lblProperty.Location = new System.Drawing.Point(13, 563);
             this.lblProperty.Name = "lblProperty";
             this.lblProperty.Size = new System.Drawing.Size(105, 24);
             this.lblProperty.TabIndex = 8;
@@ -137,7 +144,7 @@
             this.lstBoxNeighbourhood.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lstBoxNeighbourhood.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxNeighbourhood.ItemHeight = 25;
-            this.lstBoxNeighbourhood.Location = new System.Drawing.Point(12, 270);
+            this.lstBoxNeighbourhood.Location = new System.Drawing.Point(12, 329);
             this.lstBoxNeighbourhood.Name = "lstBoxNeighbourhood";
             this.lstBoxNeighbourhood.Size = new System.Drawing.Size(494, 154);
             this.lstBoxNeighbourhood.TabIndex = 13;
@@ -149,7 +156,7 @@
             this.lstBoxProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstBoxProperty.FormattingEnabled = true;
             this.lstBoxProperty.ItemHeight = 25;
-            this.lstBoxProperty.Location = new System.Drawing.Point(12, 467);
+            this.lstBoxProperty.Location = new System.Drawing.Point(12, 584);
             this.lstBoxProperty.Margin = new System.Windows.Forms.Padding(3, 3, 3, 50);
             this.lstBoxProperty.Name = "lstBoxProperty";
             this.lstBoxProperty.Size = new System.Drawing.Size(494, 154);
@@ -162,7 +169,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(563, 467);
+            this.label1.Location = new System.Drawing.Point(652, 584);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 50, 3, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 24);
@@ -175,7 +182,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(563, 495);
+            this.label2.Location = new System.Drawing.Point(652, 612);
             this.label2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(149, 24);
@@ -188,7 +195,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(563, 607);
+            this.label3.Location = new System.Drawing.Point(652, 724);
             this.label3.Margin = new System.Windows.Forms.Padding(0, 5, 0, 50);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 24);
@@ -201,7 +208,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(973, 579);
+            this.label4.Location = new System.Drawing.Point(1103, 696);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 24);
@@ -214,7 +221,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(973, 551);
+            this.label5.Location = new System.Drawing.Point(1103, 668);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(254, 24);
@@ -227,7 +234,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(973, 523);
+            this.label6.Location = new System.Drawing.Point(1103, 640);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(203, 24);
@@ -240,7 +247,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(973, 495);
+            this.label7.Location = new System.Drawing.Point(1103, 612);
             this.label7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(103, 24);
@@ -253,7 +260,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(973, 467);
+            this.label8.Location = new System.Drawing.Point(1103, 584);
             this.label8.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 24);
@@ -266,7 +273,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(563, 579);
+            this.label9.Location = new System.Drawing.Point(652, 696);
             this.label9.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(282, 24);
@@ -279,7 +286,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(563, 551);
+            this.label10.Location = new System.Drawing.Point(652, 668);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 24);
@@ -292,7 +299,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(563, 523);
+            this.label11.Location = new System.Drawing.Point(652, 640);
             this.label11.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 24);
@@ -302,7 +309,7 @@
             // txtPropID
             // 
             this.txtPropID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtPropID.Location = new System.Drawing.Point(805, 470);
+            this.txtPropID.Location = new System.Drawing.Point(894, 587);
             this.txtPropID.Name = "txtPropID";
             this.txtPropID.ReadOnly = true;
             this.txtPropID.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -312,7 +319,7 @@
             // txtRoomType
             // 
             this.txtRoomType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtRoomType.Location = new System.Drawing.Point(805, 615);
+            this.txtRoomType.Location = new System.Drawing.Point(894, 732);
             this.txtRoomType.Margin = new System.Windows.Forms.Padding(0, 0, 0, 50);
             this.txtRoomType.Name = "txtRoomType";
             this.txtRoomType.ReadOnly = true;
@@ -323,7 +330,7 @@
             // txtPrice
             // 
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPrice.Location = new System.Drawing.Point(1201, 581);
+            this.txtPrice.Location = new System.Drawing.Point(1331, 698);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -333,7 +340,7 @@
             // txtAvailability
             // 
             this.txtAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtAvailability.Location = new System.Drawing.Point(1201, 553);
+            this.txtAvailability.Location = new System.Drawing.Point(1331, 670);
             this.txtAvailability.Name = "txtAvailability";
             this.txtAvailability.ReadOnly = true;
             this.txtAvailability.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -343,7 +350,7 @@
             // txtMinStays
             // 
             this.txtMinStays.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMinStays.Location = new System.Drawing.Point(1201, 526);
+            this.txtMinStays.Location = new System.Drawing.Point(1331, 643);
             this.txtMinStays.Name = "txtMinStays";
             this.txtMinStays.ReadOnly = true;
             this.txtMinStays.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -353,7 +360,7 @@
             // txtLongitude
             // 
             this.txtLongitude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLongitude.Location = new System.Drawing.Point(1201, 497);
+            this.txtLongitude.Location = new System.Drawing.Point(1331, 614);
             this.txtLongitude.Name = "txtLongitude";
             this.txtLongitude.ReadOnly = true;
             this.txtLongitude.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -363,7 +370,7 @@
             // txtLatitude
             // 
             this.txtLatitude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLatitude.Location = new System.Drawing.Point(1201, 467);
+            this.txtLatitude.Location = new System.Drawing.Point(1331, 584);
             this.txtLatitude.Name = "txtLatitude";
             this.txtLatitude.ReadOnly = true;
             this.txtLatitude.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -373,7 +380,7 @@
             // txtNumProps
             // 
             this.txtNumProps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtNumProps.Location = new System.Drawing.Point(805, 586);
+            this.txtNumProps.Location = new System.Drawing.Point(894, 703);
             this.txtNumProps.Name = "txtNumProps";
             this.txtNumProps.ReadOnly = true;
             this.txtNumProps.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -383,7 +390,7 @@
             // txtHostName
             // 
             this.txtHostName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtHostName.Location = new System.Drawing.Point(805, 557);
+            this.txtHostName.Location = new System.Drawing.Point(894, 674);
             this.txtHostName.Name = "txtHostName";
             this.txtHostName.ReadOnly = true;
             this.txtHostName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -393,7 +400,7 @@
             // txtHostID
             // 
             this.txtHostID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtHostID.Location = new System.Drawing.Point(805, 528);
+            this.txtHostID.Location = new System.Drawing.Point(894, 645);
             this.txtHostID.Name = "txtHostID";
             this.txtHostID.ReadOnly = true;
             this.txtHostID.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -403,7 +410,7 @@
             // txtPropName
             // 
             this.txtPropName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtPropName.Location = new System.Drawing.Point(805, 499);
+            this.txtPropName.Location = new System.Drawing.Point(894, 616);
             this.txtPropName.Name = "txtPropName";
             this.txtPropName.ReadOnly = true;
             this.txtPropName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -415,18 +422,12 @@
             this.mapBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mapBox.BackgroundImage = global::AirBnB_Project.Properties.Resources.NYC_map;
             this.mapBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.mapBox.Location = new System.Drawing.Point(728, 13);
+            this.mapBox.Location = new System.Drawing.Point(841, 13);
             this.mapBox.Name = "mapBox";
             this.mapBox.Size = new System.Drawing.Size(562, 524);
             this.mapBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.mapBox.TabIndex = 37;
             this.mapBox.TabStop = false;
-            this.mapBox.Click += new System.EventHandler(this.MapBox_Click);
-            this.mapBox.Paint += new System.Windows.Forms.PaintEventHandler(this.MapBox_Paint);
-            this.mapBox.DoubleClick += new System.EventHandler(this.MapBox_DoubleClick);
-            this.mapBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MapBox_MouseDown);
-            this.mapBox.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MapBox_MouseMove);
-            this.mapBox.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MapBox_MouseUp);
             // 
             // picBoxLoadFile
             // 
@@ -450,6 +451,105 @@
             this.picBoxLoadFile2.TabStop = false;
             this.picBoxLoadFile2.Click += new System.EventHandler(this.PicBoxLoadFile2_Click);
             // 
+            // btnAddProperty
+            // 
+            this.btnAddProperty.BackColor = System.Drawing.Color.White;
+            this.btnAddProperty.FlatAppearance.BorderSize = 0;
+            this.btnAddProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddProperty.Location = new System.Drawing.Point(513, 584);
+            this.btnAddProperty.Name = "btnAddProperty";
+            this.btnAddProperty.Size = new System.Drawing.Size(83, 49);
+            this.btnAddProperty.TabIndex = 38;
+            this.btnAddProperty.Text = "Add";
+            this.btnAddProperty.UseVisualStyleBackColor = false;
+            this.btnAddProperty.Click += new System.EventHandler(this.BtnAddProperty_Click);
+            // 
+            // btnEditProperty
+            // 
+            this.btnEditProperty.BackColor = System.Drawing.Color.White;
+            this.btnEditProperty.FlatAppearance.BorderSize = 0;
+            this.btnEditProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProperty.Location = new System.Drawing.Point(513, 637);
+            this.btnEditProperty.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEditProperty.Name = "btnEditProperty";
+            this.btnEditProperty.Size = new System.Drawing.Size(83, 49);
+            this.btnEditProperty.TabIndex = 39;
+            this.btnEditProperty.Text = "Edit";
+            this.btnEditProperty.UseVisualStyleBackColor = false;
+            this.btnEditProperty.Click += new System.EventHandler(this.BtnEditProperty_Click);
+            // 
+            // btnDeleteProperty
+            // 
+            this.btnDeleteProperty.BackColor = System.Drawing.Color.White;
+            this.btnDeleteProperty.FlatAppearance.BorderSize = 0;
+            this.btnDeleteProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteProperty.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteProperty.Location = new System.Drawing.Point(513, 689);
+            this.btnDeleteProperty.Name = "btnDeleteProperty";
+            this.btnDeleteProperty.Size = new System.Drawing.Size(83, 49);
+            this.btnDeleteProperty.TabIndex = 40;
+            this.btnDeleteProperty.Text = "Delete";
+            this.btnDeleteProperty.UseVisualStyleBackColor = false;
+            this.btnDeleteProperty.Click += new System.EventHandler(this.BtnDeleteProperty_Click);
+            // 
+            // btnDeleteNeighbourhood
+            // 
+            this.btnDeleteNeighbourhood.BackColor = System.Drawing.Color.White;
+            this.btnDeleteNeighbourhood.FlatAppearance.BorderSize = 0;
+            this.btnDeleteNeighbourhood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteNeighbourhood.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteNeighbourhood.Location = new System.Drawing.Point(513, 384);
+            this.btnDeleteNeighbourhood.Name = "btnDeleteNeighbourhood";
+            this.btnDeleteNeighbourhood.Size = new System.Drawing.Size(83, 49);
+            this.btnDeleteNeighbourhood.TabIndex = 42;
+            this.btnDeleteNeighbourhood.Text = "Delete";
+            this.btnDeleteNeighbourhood.UseVisualStyleBackColor = false;
+            this.btnDeleteNeighbourhood.Click += new System.EventHandler(this.BtnDeleteNeighbourhood_Click);
+            // 
+            // btnAddNeighbourhood
+            // 
+            this.btnAddNeighbourhood.BackColor = System.Drawing.Color.White;
+            this.btnAddNeighbourhood.FlatAppearance.BorderSize = 0;
+            this.btnAddNeighbourhood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNeighbourhood.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNeighbourhood.Location = new System.Drawing.Point(513, 329);
+            this.btnAddNeighbourhood.Name = "btnAddNeighbourhood";
+            this.btnAddNeighbourhood.Size = new System.Drawing.Size(83, 49);
+            this.btnAddNeighbourhood.TabIndex = 41;
+            this.btnAddNeighbourhood.Text = "Add";
+            this.btnAddNeighbourhood.UseVisualStyleBackColor = false;
+            this.btnAddNeighbourhood.Click += new System.EventHandler(this.BtnAddNeighbourhood_Click);
+            // 
+            // btnDeleteDistrict
+            // 
+            this.btnDeleteDistrict.BackColor = System.Drawing.Color.White;
+            this.btnDeleteDistrict.FlatAppearance.BorderSize = 0;
+            this.btnDeleteDistrict.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteDistrict.Location = new System.Drawing.Point(512, 120);
+            this.btnDeleteDistrict.Name = "btnDeleteDistrict";
+            this.btnDeleteDistrict.Size = new System.Drawing.Size(83, 49);
+            this.btnDeleteDistrict.TabIndex = 44;
+            this.btnDeleteDistrict.Text = "Delete";
+            this.btnDeleteDistrict.UseVisualStyleBackColor = false;
+            this.btnDeleteDistrict.Click += new System.EventHandler(this.BtnDeleteDistrict_Click);
+            // 
+            // btnAddDistrict
+            // 
+            this.btnAddDistrict.BackColor = System.Drawing.Color.White;
+            this.btnAddDistrict.FlatAppearance.BorderSize = 0;
+            this.btnAddDistrict.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDistrict.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDistrict.Location = new System.Drawing.Point(512, 65);
+            this.btnAddDistrict.Name = "btnAddDistrict";
+            this.btnAddDistrict.Size = new System.Drawing.Size(83, 49);
+            this.btnAddDistrict.TabIndex = 43;
+            this.btnAddDistrict.Text = "Add";
+            this.btnAddDistrict.UseVisualStyleBackColor = false;
+            this.btnAddDistrict.Click += new System.EventHandler(this.BtnAddDistrict_Click);
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -458,8 +558,15 @@
             this.AutoScrollMinSize = new System.Drawing.Size(500, 400);
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1426, 657);
+            this.BackColor = System.Drawing.Color.Crimson;
+            this.ClientSize = new System.Drawing.Size(1539, 774);
+            this.Controls.Add(this.btnDeleteDistrict);
+            this.Controls.Add(this.btnAddDistrict);
+            this.Controls.Add(this.btnDeleteNeighbourhood);
+            this.Controls.Add(this.btnAddNeighbourhood);
+            this.Controls.Add(this.btnDeleteProperty);
+            this.Controls.Add(this.btnEditProperty);
+            this.Controls.Add(this.btnAddProperty);
             this.Controls.Add(this.mapBox);
             this.Controls.Add(this.txtPropName);
             this.Controls.Add(this.txtHostID);
@@ -499,7 +606,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Main_DragDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Main_DragEnter);
             ((System.ComponentModel.ISupportInitialize)(this.mapBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLoadFile2)).EndInit();
@@ -542,6 +648,13 @@
         private System.Windows.Forms.TextBox txtPropName;
         private System.Windows.Forms.ListBox lstBoxNeighbourhood;
         private System.Windows.Forms.PictureBox mapBox;
+        private System.Windows.Forms.Button btnAddProperty;
+        private System.Windows.Forms.Button btnEditProperty;
+        private System.Windows.Forms.Button btnDeleteProperty;
+        private System.Windows.Forms.Button btnDeleteNeighbourhood;
+        private System.Windows.Forms.Button btnAddNeighbourhood;
+        private System.Windows.Forms.Button btnDeleteDistrict;
+        private System.Windows.Forms.Button btnAddDistrict;
     }
 }
 
