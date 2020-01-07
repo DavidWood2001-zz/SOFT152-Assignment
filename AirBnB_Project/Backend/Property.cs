@@ -9,7 +9,8 @@ namespace AirBnB_Project
 {
     class Property
     {
-        // ATTRIBUTES
+        #region attributes
+
         string propertyID;
         string propertyName;
         string hostID;
@@ -22,7 +23,9 @@ namespace AirBnB_Project
         string minDays;
         string availability;
 
-        // CONSTRUCTOR
+        #endregion attributes
+
+        #region constructor
         public Property(string inPropertyID, string inPropertyName, string inHostID, string inHostName, string inHostProperties,
             string inLatitude, string inLongitude, string inType, string inPrice, string inDays, string inAvailabilty)
         {
@@ -39,7 +42,10 @@ namespace AirBnB_Project
             availability = checkAvailability(Convert.ToInt32(inAvailabilty));
         }
 
-        //GETTERS
+        #endregion constructor
+
+        #region getters
+
         public string getPropertyID()
         {
             return propertyID;
@@ -85,7 +91,10 @@ namespace AirBnB_Project
             return availability;
         }
 
-        //SETTERS
+        #endregion getters
+
+        #region setters
+
         public void setPropertyID(string inPropertyID)
         {
             propertyID = checkPropertyID(Convert.ToInt32(inPropertyID));
@@ -131,7 +140,11 @@ namespace AirBnB_Project
         {
             availability = checkAvailability(Convert.ToInt32(inAvailability));
         }
-        //METHODS TO CHECK INPUT
+
+        #endregion setters
+
+        #region methods
+        #region checkInput
         public static string checkPropertyID(int inPropertyID)
         {
             if (inPropertyID > 0)
@@ -264,10 +277,12 @@ namespace AirBnB_Project
                 return "0";
             }
         }
+        #endregion checkInput
         public static void showErrorMessage(string inMessage)
         {
             //Shows a pop-up error message if a user causes an issue
             MessageBox.Show(inMessage);
         }
+        #endregion methods
     }
 }
