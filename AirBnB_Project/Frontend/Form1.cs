@@ -17,7 +17,7 @@ namespace AirBnB_Project
         private int[] propertyCoords = new int[2];
         private int[,] listOfPropsCoords;
         private int propertyIndex = 0;
-        private string filePath;
+        private string localFilePath;
 
         #endregion variables
         public Main()
@@ -78,11 +78,11 @@ namespace AirBnB_Project
             if (FileControls.processFileLoad(openFileDialog1))
             {
                 readFile(openFileDialog1.FileName);
-                filePath = openFileDialog1.FileName;
             }
         }
         private void readFile(string filePath)
         {
+            localFilePath = filePath;
             // Clear the property index for the map
             propertyIndex = 0;
             // Create streamreader
@@ -458,31 +458,37 @@ namespace AirBnB_Project
         #region writeFile
         private void writeFile()
         {
-            StreamWriter sw = new StreamWriter(filePath);
+            StreamWriter sw = new StreamWriter(localFilePath);
             for (int district = 0; district < lstDistricts.Length; district++)
             {
-                sw.WriteLine(lstDistricts[district].getName());
-                Neighbourhood[] lstNeighbourhoods = lstDistricts[district].getArrayNeighbourhoods();
-                for (int neighbourhood = 0; neighbourhood < lstNeighbourhoods.Length; neighbourhood++)
+                if (lstDistricts[district] != null)
                 {
-                    sw.WriteLine(lstNeighbourhoods[neighbourhood].getName());
-                    Property[] lstProperties = lstNeighbourhoods[neighbourhood].getArrayProperties();
-                    for (int property = 0; property < lstProperties.Length; property++)
+                    sw.WriteLine(lstDistricts[district].getName());
+                    sw.WriteLine(lstDistricts[district].getNumNeighbourhoods());
+                    Neighbourhood[] lstNeighbourhoods = lstDistricts[district].getArrayNeighbourhoods();
+                    for (int neighbourhood = 0; neighbourhood < lstNeighbourhoods.Length; neighbourhood++)
                     {
-                        sw.WriteLine(lstProperties[property].getPropertyID());
-                        sw.WriteLine(lstProperties[property].getPropertyName());
-                        sw.WriteLine(lstProperties[property].getHostID());
-                        sw.WriteLine(lstProperties[property].getHostName());
-                        sw.WriteLine(lstProperties[property].getNumHostProperties());
-                        sw.WriteLine(lstProperties[property].getLatitude());
-                        sw.WriteLine(lstProperties[property].getLongitude());
-                        sw.WriteLine(lstProperties[property].getRoomType());
-                        sw.WriteLine(lstProperties[property].getPrice());
-                        sw.WriteLine(lstProperties[property].getMinDays());
-                        sw.WriteLine(lstProperties[property].getAvailability());
+                        sw.WriteLine(lstNeighbourhoods[neighbourhood].getName());
+                        sw.WriteLine(lstNeighbourhoods[neighbourhood].getNumProperties());
+                        Property[] lstProperties = lstNeighbourhoods[neighbourhood].getArrayProperties();
+                        for (int property = 0; property < lstProperties.Length; property++)
+                        {
+                            sw.WriteLine(lstProperties[property].getPropertyID());
+                            sw.WriteLine(lstProperties[property].getPropertyName());
+                            sw.WriteLine(lstProperties[property].getHostID());
+                            sw.WriteLine(lstProperties[property].getHostName());
+                            sw.WriteLine(lstProperties[property].getNumHostProperties());
+                            sw.WriteLine(lstProperties[property].getLatitude());
+                            sw.WriteLine(lstProperties[property].getLongitude());
+                            sw.WriteLine(lstProperties[property].getRoomType());
+                            sw.WriteLine(lstProperties[property].getPrice());
+                            sw.WriteLine(lstProperties[property].getMinDays());
+                            sw.WriteLine(lstProperties[property].getAvailability());
+                        }
                     }
                 }
             }
+            sw.Close();
         }
         #endregion writeFile
     }

@@ -11,7 +11,7 @@ namespace AirBnB_Project
         #region attributes
 
         string name;
-        readonly int numProperties;
+        int numProperties;
         Property[] arrayProperties;
 
         #endregion attributes
@@ -52,8 +52,13 @@ namespace AirBnB_Project
         {
             Array.Resize(ref arrayProperties, inArrayProperties.Length);
             arrayProperties = inArrayProperties;
+            setNumProperties();
         }
 
+        public void setNumProperties()
+        {
+            numProperties = arrayProperties.Length;
+        }
         #endregion setters
     }
 }
