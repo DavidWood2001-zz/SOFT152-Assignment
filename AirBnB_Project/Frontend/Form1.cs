@@ -477,13 +477,27 @@ namespace AirBnB_Project
         #region editCLick
         private void BtnEditProperty_Click(object sender, EventArgs e)
         {
+            Neighbourhood[] lstNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+            Property[] lstProperties = lstNeighbourhoods[selectedNeighbourhood].getArrayProperties();
             //Edit a property
+            lstProperties[selectedProperty].setPropertyName(txtPropName.Text);
+            lstProperties[selectedProperty].setPropertyID(txtPropID.Text);
+            lstProperties[selectedProperty].setHostID(txtHostID.Text);
+            lstProperties[selectedProperty].setHostName(txtHostName.Text);
+            lstProperties[selectedProperty].setNumHostProperties(txtNumProps.Text);
+            lstProperties[selectedProperty].setLatitude(txtLatitude.Text);
+            lstProperties[selectedProperty].setLongitude(txtLongitude.Text);
+            lstProperties[selectedProperty].setRoomType(txtRoomType.Text);
+            lstProperties[selectedProperty].setPrice(txtPrice.Text);
+            lstProperties[selectedProperty].setMinDays(txtMinStays.Text);
+            lstProperties[selectedProperty].setAvailability(txtAvailability.Text);
+            setDistrictBox();
             writeFile();
         }
         #endregion editClick
 
         #region writeFile
-        private void writeFile()
+        public void writeFile()
         {
             StreamWriter sw = new StreamWriter(localFilePath);
             for (int district = 0; district < lstDistricts.Length; district++)

@@ -563,6 +563,7 @@
             this.btnEditProperty.TabIndex = 51;
             this.btnEditProperty.Text = "Edit";
             this.btnEditProperty.UseVisualStyleBackColor = false;
+            this.btnEditProperty.Click += new System.EventHandler(this.BtnEditProperty_Click);
             // 
             // btnAddProperty
             // 
