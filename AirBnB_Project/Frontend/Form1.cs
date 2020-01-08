@@ -413,37 +413,64 @@ namespace AirBnB_Project
         {
             //Delete the selected District
             //move all elements to the right of that index left by one
-            District temp;
             for (int district = selectedDistrict; district < lstDistricts.Length; district++)
             {
-                if (district != lstDistricts.Length - 1)
+                if (lstDistricts.Length - 1 != district)
                 {
-                    temp = lstDistricts[district + 1];
-                    lstDistricts[district] = temp;
+                    lstDistricts[district] = lstDistricts[district + 1];
+                }
+                else
+                {
+                    lstDistricts[district] = null;
                 }
             }
             Array.Resize(ref lstDistricts, lstDistricts.Length - 1);
+            writeFile();
+            setDistrictBox();
         }
 
         private void BtnDeleteNeighbourhood_Click(object sender, EventArgs e)
-        {
+            {
             //Delete the selected Neighbourhood
             //move all elements to the right of that index left by one
-            Neighbourhood temp;
             Neighbourhood[] lstOfNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
             for (int neighbourhood = selectedNeighbourhood; neighbourhood < lstOfNeighbourhoods.Length; neighbourhood++)
             {
-                if (neighbourhood != lstDistricts.Length - 1)
+                if (lstOfNeighbourhoods.Length - 1 != neighbourhood)
                 {
-                    temp = lstOfNeighbourhoods[neighbourhood + 1];
-                    lstOfNeighbourhoods[neighbourhood] = temp;
+                    lstOfNeighbourhoods[neighbourhood] = lstOfNeighbourhoods[neighbourhood + 1];
+                }
+                else
+                {
+                    lstOfNeighbourhoods[neighbourhood] = null;
                 }
             }
-            Array.Resize(ref lstDistricts, lstDistricts.Length - 1);
+            Array.Resize(ref lstOfNeighbourhoods, lstOfNeighbourhoods.Length - 1);
+            lstDistricts[selectedDistrict].setArrayNeighbourhoods(lstOfNeighbourhoods);
+            writeFile();
+            setDistrictBox();
         }
+
         private void BtnDeleteProperty_Click(object sender, EventArgs e)
         {
             //Delete a property
+            Neighbourhood[] lstNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+            Property[] lstProperties = lstNeighbourhoods[selectedNeighbourhood].getArrayProperties();
+            for (int property = selectedProperty; property < lstProperties.Length; property++)
+            {
+                if(lstProperties.Length - 1 != property)
+                {
+                    lstProperties[property] = lstProperties[property + 1];
+                }
+                else
+                {
+                    lstProperties[property] = null;
+                }
+            }
+            Array.Resize(ref lstProperties, lstProperties.Length - 1);
+            lstNeighbourhoods[selectedDistrict].setArrayProperties(lstProperties);
+            writeFile();
+            setDistrictBox();
         }
         #endregion deleteClick
 
@@ -468,22 +495,25 @@ namespace AirBnB_Project
                     Neighbourhood[] lstNeighbourhoods = lstDistricts[district].getArrayNeighbourhoods();
                     for (int neighbourhood = 0; neighbourhood < lstNeighbourhoods.Length; neighbourhood++)
                     {
-                        sw.WriteLine(lstNeighbourhoods[neighbourhood].getName());
-                        sw.WriteLine(lstNeighbourhoods[neighbourhood].getNumProperties());
-                        Property[] lstProperties = lstNeighbourhoods[neighbourhood].getArrayProperties();
-                        for (int property = 0; property < lstProperties.Length; property++)
+                        if (lstNeighbourhoods[neighbourhood] != null)
                         {
-                            sw.WriteLine(lstProperties[property].getPropertyID());
-                            sw.WriteLine(lstProperties[property].getPropertyName());
-                            sw.WriteLine(lstProperties[property].getHostID());
-                            sw.WriteLine(lstProperties[property].getHostName());
-                            sw.WriteLine(lstProperties[property].getNumHostProperties());
-                            sw.WriteLine(lstProperties[property].getLatitude());
-                            sw.WriteLine(lstProperties[property].getLongitude());
-                            sw.WriteLine(lstProperties[property].getRoomType());
-                            sw.WriteLine(lstProperties[property].getPrice());
-                            sw.WriteLine(lstProperties[property].getMinDays());
-                            sw.WriteLine(lstProperties[property].getAvailability());
+                            sw.WriteLine(lstNeighbourhoods[neighbourhood].getName());
+                            sw.WriteLine(lstNeighbourhoods[neighbourhood].getNumProperties());
+                            Property[] lstProperties = lstNeighbourhoods[neighbourhood].getArrayProperties();
+                            for (int property = 0; property < lstProperties.Length; property++)
+                            {
+                                sw.WriteLine(lstProperties[property].getPropertyID());
+                                sw.WriteLine(lstProperties[property].getPropertyName());
+                                sw.WriteLine(lstProperties[property].getHostID());
+                                sw.WriteLine(lstProperties[property].getHostName());
+                                sw.WriteLine(lstProperties[property].getNumHostProperties());
+                                sw.WriteLine(lstProperties[property].getLatitude());
+                                sw.WriteLine(lstProperties[property].getLongitude());
+                                sw.WriteLine(lstProperties[property].getRoomType());
+                                sw.WriteLine(lstProperties[property].getPrice());
+                                sw.WriteLine(lstProperties[property].getMinDays());
+                                sw.WriteLine(lstProperties[property].getAvailability());
+                            }
                         }
                     }
                 }

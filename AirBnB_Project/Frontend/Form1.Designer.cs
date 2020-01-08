@@ -548,6 +548,7 @@
             this.btnDeleteProperty.TabIndex = 52;
             this.btnDeleteProperty.Text = "Delete";
             this.btnDeleteProperty.UseVisualStyleBackColor = false;
+            this.btnDeleteProperty.Click += new System.EventHandler(this.BtnDeleteProperty_Click);
             // 
             // btnEditProperty
             // 
