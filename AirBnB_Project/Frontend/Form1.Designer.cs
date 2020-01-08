@@ -315,7 +315,6 @@
             this.txtPropID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPropID.Location = new System.Drawing.Point(755, 587);
             this.txtPropID.Name = "txtPropID";
-            this.txtPropID.ReadOnly = true;
             this.txtPropID.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtPropID.Size = new System.Drawing.Size(188, 22);
             this.txtPropID.TabIndex = 26;
@@ -326,7 +325,6 @@
             this.txtRoomType.Location = new System.Drawing.Point(755, 732);
             this.txtRoomType.Margin = new System.Windows.Forms.Padding(0, 0, 0, 50);
             this.txtRoomType.Name = "txtRoomType";
-            this.txtRoomType.ReadOnly = true;
             this.txtRoomType.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtRoomType.Size = new System.Drawing.Size(188, 22);
             this.txtRoomType.TabIndex = 27;
@@ -336,7 +334,6 @@
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrice.Location = new System.Drawing.Point(1192, 698);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.ReadOnly = true;
             this.txtPrice.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtPrice.Size = new System.Drawing.Size(188, 22);
             this.txtPrice.TabIndex = 28;
@@ -346,7 +343,6 @@
             this.txtAvailability.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAvailability.Location = new System.Drawing.Point(1192, 670);
             this.txtAvailability.Name = "txtAvailability";
-            this.txtAvailability.ReadOnly = true;
             this.txtAvailability.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtAvailability.Size = new System.Drawing.Size(188, 22);
             this.txtAvailability.TabIndex = 29;
@@ -356,7 +352,6 @@
             this.txtMinStays.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtMinStays.Location = new System.Drawing.Point(1192, 643);
             this.txtMinStays.Name = "txtMinStays";
-            this.txtMinStays.ReadOnly = true;
             this.txtMinStays.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtMinStays.Size = new System.Drawing.Size(188, 22);
             this.txtMinStays.TabIndex = 30;
@@ -366,7 +361,6 @@
             this.txtLongitude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLongitude.Location = new System.Drawing.Point(1192, 614);
             this.txtLongitude.Name = "txtLongitude";
-            this.txtLongitude.ReadOnly = true;
             this.txtLongitude.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtLongitude.Size = new System.Drawing.Size(188, 22);
             this.txtLongitude.TabIndex = 31;
@@ -376,7 +370,6 @@
             this.txtLatitude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.txtLatitude.Location = new System.Drawing.Point(1192, 584);
             this.txtLatitude.Name = "txtLatitude";
-            this.txtLatitude.ReadOnly = true;
             this.txtLatitude.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtLatitude.Size = new System.Drawing.Size(188, 22);
             this.txtLatitude.TabIndex = 32;
@@ -386,7 +379,6 @@
             this.txtNumProps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtNumProps.Location = new System.Drawing.Point(755, 703);
             this.txtNumProps.Name = "txtNumProps";
-            this.txtNumProps.ReadOnly = true;
             this.txtNumProps.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtNumProps.Size = new System.Drawing.Size(188, 22);
             this.txtNumProps.TabIndex = 33;
@@ -396,7 +388,6 @@
             this.txtHostName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtHostName.Location = new System.Drawing.Point(755, 674);
             this.txtHostName.Name = "txtHostName";
-            this.txtHostName.ReadOnly = true;
             this.txtHostName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtHostName.Size = new System.Drawing.Size(188, 22);
             this.txtHostName.TabIndex = 34;
@@ -406,7 +397,6 @@
             this.txtHostID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtHostID.Location = new System.Drawing.Point(755, 645);
             this.txtHostID.Name = "txtHostID";
-            this.txtHostID.ReadOnly = true;
             this.txtHostID.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtHostID.Size = new System.Drawing.Size(188, 22);
             this.txtHostID.TabIndex = 35;
@@ -416,7 +406,6 @@
             this.txtPropName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPropName.Location = new System.Drawing.Point(755, 616);
             this.txtPropName.Name = "txtPropName";
-            this.txtPropName.ReadOnly = true;
             this.txtPropName.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtPropName.Size = new System.Drawing.Size(188, 22);
             this.txtPropName.TabIndex = 36;
@@ -586,6 +575,7 @@
             this.btnAddProperty.TabIndex = 50;
             this.btnAddProperty.Text = "Add";
             this.btnAddProperty.UseVisualStyleBackColor = false;
+            this.btnAddProperty.Click += new System.EventHandler(this.BtnAddProperty_Click);
             // 
             // Main
             // 

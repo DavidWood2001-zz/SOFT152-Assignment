@@ -9,6 +9,7 @@ namespace AirBnB_Project
 {
     public partial class Main : Form
     {
+        #region variables
         private int selectedDistrict;
         private int selectedNeighbourhood = 0;
         private int selectedProperty = 0;
@@ -16,11 +17,15 @@ namespace AirBnB_Project
         private int[] propertyCoords = new int[2];
         private int[,] listOfPropsCoords;
         private int propertyIndex = 0;
+        private string filePath;
 
+        #endregion variables
         public Main()
         {
             InitializeComponent();
         }
+
+        #region formEvents
         private void Form1_Load(object sender, EventArgs e)
         {
             this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
@@ -35,8 +40,9 @@ namespace AirBnB_Project
         {
             Application.Exit();
         }
+        #endregion formEvents
 
-        #region LoadFile
+        #region loadFile
         private static void Main_DragEnter(object sender, DragEventArgs e)
         {
             FileControls.UploadFile_DragEnter(e);
@@ -72,6 +78,7 @@ namespace AirBnB_Project
             if (FileControls.processFileLoad(openFileDialog1))
             {
                 readFile(openFileDialog1.FileName);
+                filePath = openFileDialog1.FileName;
             }
         }
         private void readFile(string filePath)
@@ -147,7 +154,7 @@ namespace AirBnB_Project
             setDistrictBox();
         }
 
-        #endregion ReadFile
+        #endregion readFile
 
         #region setInformation
 
@@ -204,14 +211,20 @@ namespace AirBnB_Project
             //Clear the list box
             lstBoxNeighbourhood.Items.Clear();
             // Get the neighbourhood array
-            Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
-            // For neighbourhood in inLstItems
-            for (int neighbourhood = 0; neighbourhood < selectedNeighbourhoodArray.Length; neighbourhood++)
+            try
             {
-                // Get name of item
-                string itemName = selectedNeighbourhoodArray[neighbourhood].getName();
-                // Add the district to the specified listBox
-                lstBoxNeighbourhood.Items.Add(itemName);
+                Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                // For neighbourhood in inLstItems
+                for (int neighbourhood = 0; neighbourhood < selectedNeighbourhoodArray.Length; neighbourhood++)
+                {
+                    // Get name of item
+                    string itemName = selectedNeighbourhoodArray[neighbourhood].getName();
+                    // Add the district to the specified listBox
+                    lstBoxNeighbourhood.Items.Add(itemName);
+                }
+            }
+            catch
+            {
             }
         }
         private void setPropertyBox()
@@ -220,31 +233,40 @@ namespace AirBnB_Project
             //Clear the list box
             lstBoxProperty.Items.Clear();
             // Get the Neighbourhood array
-            Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
-            // Get the property array from the neighbourhood
-            Property[] selectedPropertyArray = selectedNeighbourhoodArray[selectedNeighbourhood].getArrayProperties();
-            // Instantiate the array of property co-ords as the length of number of properties
-            listOfPropsCoords = new int[selectedNeighbourhoodArray[selectedNeighbourhood].getNumProperties(), 2];
-            // Create array for topLeft location
-            double[] topLeftArray = new double[2];
-            topLeftArray[0] = -74.263301;
-            topLeftArray[1] = 40.911288;
-            // For district in inLstItems
-            for (int property = 0; property < selectedPropertyArray.Length; property++)
+            try
             {
-                // Get name of item
-                string itemName = selectedPropertyArray[property].getPropertyName();
-                // Add the district to the specified listBox
-                lstBoxProperty.Items.Add(itemName);
-                // Create array for property location
-                double[] propLongLats = new double[2];
-                propLongLats[0] = Convert.ToDouble(selectedPropertyArray[property].getLongitude());
-                propLongLats[1] = Convert.ToDouble(selectedPropertyArray[property].getLatitude());
+                Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                // Get the property array from the neighbourhood
+                Property[] selectedPropertyArray = selectedNeighbourhoodArray[selectedNeighbourhood].getArrayProperties();
+                // Instantiate the array of property co-ords as the length of number of properties
+                listOfPropsCoords = new int[selectedNeighbourhoodArray[selectedNeighbourhood].getNumProperties(), 2];
+                // Create array for topLeft location
+                double[] topLeftArray = new double[2];
+                topLeftArray[0] = -74.263301;
+                topLeftArray[1] = 40.911288;
+                // For district in inLstItems
+                if (selectedPropertyArray.Length != 0)
+                {
+                    for (int property = 0; property < selectedPropertyArray.Length; property++)
+                    {
+                        // Get name of item
+                        string itemName = selectedPropertyArray[property].getPropertyName();
+                        // Add the district to the specified listBox
+                        lstBoxProperty.Items.Add(itemName);
+                        // Create array for property location
+                        double[] propLongLats = new double[2];
+                        propLongLats[0] = Convert.ToDouble(selectedPropertyArray[property].getLongitude());
+                        propLongLats[1] = Convert.ToDouble(selectedPropertyArray[property].getLatitude());
 
-                propertyCoords = G.calculateCoords(topLeftArray, propLongLats, 40.489110, -73.666177, mapBox.Width, mapBox.Height);
-                listOfPropsCoords[propertyIndex, 0] = propertyCoords[0];
-                listOfPropsCoords[propertyIndex, 1] = propertyCoords[1];
-                propertyIndex += 1;
+                        propertyCoords = G.calculateCoords(topLeftArray, propLongLats, 40.489110, -73.666177, mapBox.Width, mapBox.Height);
+                        listOfPropsCoords[propertyIndex, 0] = propertyCoords[0];
+                        listOfPropsCoords[propertyIndex, 1] = propertyCoords[1];
+                        propertyIndex += 1;
+                    }
+                }
+            }
+            catch
+            {
             }
             // Redraw the picture box
             mapBox.Invalidate();
@@ -256,33 +278,50 @@ namespace AirBnB_Project
         {
             // SET ALL THE TEXT BOXES TO THE RELEVANT INFO
             // Get the selected property
-            Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
-            Property[] selectedPropertyArray = selectedNeighbourhoodArray[selectedNeighbourhood].getArrayProperties();
-            Property currentProperty = selectedPropertyArray[selectedProperty];
-            // Get the attributes and save to temp variables
-            string tempPropID = currentProperty.getPropertyID();
-            string tempPropName = currentProperty.getPropertyName();
-            string tempHostID = currentProperty.getHostID();
-            string tempHostName = currentProperty.getHostName();
-            string tempNumProps = currentProperty.getNumHostProperties();
-            string tempRoomType = currentProperty.getRoomType();
-            string tempLatitude = currentProperty.getLatitude();
-            string tempLongitude = currentProperty.getLongitude();
-            string tempMinStay = currentProperty.getMinDays();
-            string tempAvailability = currentProperty.getAvailability();
-            string tempPrice = currentProperty.getPrice();
-            // set the text attributes of relevant text boxes to the right attribute
-            txtPropID.Text = tempPropID;
-            txtPropName.Text = tempPropName;
-            txtHostID.Text = tempHostID;
-            txtHostName.Text = tempHostName;
-            txtNumProps.Text = tempNumProps;
-            txtRoomType.Text = tempRoomType;
-            txtLatitude.Text = tempLatitude;
-            txtLongitude.Text = tempLongitude;
-            txtMinStays.Text = tempMinStay;
-            txtAvailability.Text = tempAvailability;
-            txtPrice.Text = tempPrice;
+            try
+            {
+                Neighbourhood[] selectedNeighbourhoodArray = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                Property[] selectedPropertyArray = selectedNeighbourhoodArray[selectedNeighbourhood].getArrayProperties();
+                Property currentProperty = selectedPropertyArray[selectedProperty];
+                // Get the attributes and save to temp variables
+                string tempPropID = currentProperty.getPropertyID();
+                string tempPropName = currentProperty.getPropertyName();
+                string tempHostID = currentProperty.getHostID();
+                string tempHostName = currentProperty.getHostName();
+                string tempNumProps = currentProperty.getNumHostProperties();
+                string tempRoomType = currentProperty.getRoomType();
+                string tempLatitude = currentProperty.getLatitude();
+                string tempLongitude = currentProperty.getLongitude();
+                string tempMinStay = currentProperty.getMinDays();
+                string tempAvailability = currentProperty.getAvailability();
+                string tempPrice = currentProperty.getPrice();
+                // set the text attributes of relevant text boxes to the right attribute
+                txtPropID.Text = tempPropID;
+                txtPropName.Text = tempPropName;
+                txtHostID.Text = tempHostID;
+                txtHostName.Text = tempHostName;
+                txtNumProps.Text = tempNumProps;
+                txtRoomType.Text = tempRoomType;
+                txtLatitude.Text = tempLatitude;
+                txtLongitude.Text = tempLongitude;
+                txtMinStays.Text = tempMinStay;
+                txtAvailability.Text = tempAvailability;
+                txtPrice.Text = tempPrice;
+            }
+            catch
+            {
+                txtPropID.Text = "";
+                txtPropName.Text = "";
+                txtHostID.Text = "";
+                txtHostName.Text = "";
+                txtNumProps.Text = "";
+                txtRoomType.Text = "";
+                txtLatitude.Text = "";
+                txtLongitude.Text = "";
+                txtMinStays.Text = "";
+                txtAvailability.Text = "";
+                txtPrice.Text = "";
+            }
         }
         #endregion setInformation
 
@@ -314,35 +353,57 @@ namespace AirBnB_Project
         private void BtnAddDistrict_Click(object sender, EventArgs e)
         {
             //Add a district
-            if (txtDistrictName.Text != "")
-            {
-                lstBoxDistrict.Items.Add(txtDistrictName.Text);
-                Array.Resize(ref lstDistricts, lstDistricts.Length + 1);
-                lstDistricts[lstDistricts.Length-1] = new District(txtDistrictName.Text, new Neighbourhood[0]);
-            }
+            add("District", txtDistrictName.Text);
         }
 
         private void BtnAddNeighbourhood_Click(object sender, EventArgs e)
         {
             //Add a neighbourhood
-            if (txtNeighbourhoodName.Text != "")
-            {
-                lstBoxNeighbourhood.Items.Add(txtNeighbourhoodName.Text);
-                Neighbourhood[] lstOfNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
-                Array.Resize(ref lstOfNeighbourhoods, lstOfNeighbourhoods.Length + 1);
-                lstOfNeighbourhoods[lstOfNeighbourhoods.Length - 1] = new Neighbourhood(txtNeighbourhoodName.Text, new Property[0]);
-            }
+            add("Neighbourhood", txtNeighbourhoodName.Text);
         }
 
         private void BtnAddProperty_Click(object sender, EventArgs e)
         {
             //Add a property
-            if (txtPropName.Text == "")
+            add("Property", txtPropName.Text);
+        }
+
+        private void add(string category, string name)
+        {
+            if (category == "District")
             {
-                Neighbourhood[] lstOfNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
-                Property[] lstOfProperties = lstOfNeighbourhoods[selectedNeighbourhood].getArrayProperties();
-                Array.Resize(ref lstOfProperties, lstOfProperties.Length + 1);
-                lstOfProperties[lstOfProperties.Length - 1] = new Property(txtPropID.Text, txtPropName.Text, txtHostID.Text, txtHostName.Text, txtNumProps.Text, txtLatitude.Text, txtLongitude.Text, txtRoomType.Text, txtPrice.Text, txtMinStays.Text, txtAvailability.Text);
+                lstBoxDistrict.Items.Add(txtDistrictName.Text);
+                //Create district
+                District district = new District(name, new Neighbourhood[0]);
+                //Add to district list
+                Array.Resize(ref lstDistricts, lstDistricts.Length + 1);
+                lstDistricts[lstDistricts.Length - 2] = district;
+            }
+            else if (category == "Neighbourhood") {
+                lstBoxNeighbourhood.Items.Add(txtNeighbourhoodName.Text);
+                //Create neighbourhood
+                //Add to neighbourhood list
+                Neighbourhood[] lstNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                Array.Resize(ref lstNeighbourhoods, lstNeighbourhoods.Length + 1);
+                lstNeighbourhoods[lstNeighbourhoods.Length - 1] = new Neighbourhood(name, new Property[0]);
+                lstDistricts[selectedDistrict].setArrayNeighbourhoods(lstNeighbourhoods);
+            }
+            else if (category == "Property")
+            {
+                lstBoxProperty.Items.Add(txtPropName.Text);
+                //Create property
+                Neighbourhood[] lstNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+                Property[] lstProperties = lstNeighbourhoods[selectedNeighbourhood].getArrayProperties();
+                Array.Resize(ref lstProperties, lstProperties.Length + 1);
+
+                Property property = new Property(txtPropID.Text, txtPropName.Text, txtHostID.Text, txtHostName.Text,
+                    txtNumProps.Text, txtLatitude.Text, txtLongitude.Text, txtRoomType.Text, txtPrice.Text, txtMinStays.Text,
+                    txtAvailability.Text);
+
+                lstProperties[lstProperties.Length - 1] = property;
+                lstNeighbourhoods[selectedNeighbourhood].setArrayProperties(lstProperties);
+                //Add to property list
+                writeFile();
             }
         }
         #endregion addClick
@@ -350,12 +411,35 @@ namespace AirBnB_Project
         #region deleteClick
         private void BtnDeleteDistrict_Click(object sender, EventArgs e)
         {
-            //Delete a district
+            //Delete the selected District
+            //move all elements to the right of that index left by one
+            District temp;
+            for (int district = selectedDistrict; district < lstDistricts.Length; district++)
+            {
+                if (district != lstDistricts.Length - 1)
+                {
+                    temp = lstDistricts[district + 1];
+                    lstDistricts[district] = temp;
+                }
+            }
+            Array.Resize(ref lstDistricts, lstDistricts.Length - 1);
         }
 
         private void BtnDeleteNeighbourhood_Click(object sender, EventArgs e)
         {
-            //Delete a neighbourhood
+            //Delete the selected Neighbourhood
+            //move all elements to the right of that index left by one
+            Neighbourhood temp;
+            Neighbourhood[] lstOfNeighbourhoods = lstDistricts[selectedDistrict].getArrayNeighbourhoods();
+            for (int neighbourhood = selectedNeighbourhood; neighbourhood < lstOfNeighbourhoods.Length; neighbourhood++)
+            {
+                if (neighbourhood != lstDistricts.Length - 1)
+                {
+                    temp = lstOfNeighbourhoods[neighbourhood + 1];
+                    lstOfNeighbourhoods[neighbourhood] = temp;
+                }
+            }
+            Array.Resize(ref lstDistricts, lstDistricts.Length - 1);
         }
         private void BtnDeleteProperty_Click(object sender, EventArgs e)
         {
@@ -367,8 +451,40 @@ namespace AirBnB_Project
         private void BtnEditProperty_Click(object sender, EventArgs e)
         {
             //Edit a property
+            writeFile();
         }
         #endregion editClick
+
+        #region writeFile
+        private void writeFile()
+        {
+            StreamWriter sw = new StreamWriter(filePath);
+            for (int district = 0; district < lstDistricts.Length; district++)
+            {
+                sw.WriteLine(lstDistricts[district].getName());
+                Neighbourhood[] lstNeighbourhoods = lstDistricts[district].getArrayNeighbourhoods();
+                for (int neighbourhood = 0; neighbourhood < lstNeighbourhoods.Length; neighbourhood++)
+                {
+                    sw.WriteLine(lstNeighbourhoods[neighbourhood].getName());
+                    Property[] lstProperties = lstNeighbourhoods[neighbourhood].getArrayProperties();
+                    for (int property = 0; property < lstProperties.Length; property++)
+                    {
+                        sw.WriteLine(lstProperties[property].getPropertyID());
+                        sw.WriteLine(lstProperties[property].getPropertyName());
+                        sw.WriteLine(lstProperties[property].getHostID());
+                        sw.WriteLine(lstProperties[property].getHostName());
+                        sw.WriteLine(lstProperties[property].getNumHostProperties());
+                        sw.WriteLine(lstProperties[property].getLatitude());
+                        sw.WriteLine(lstProperties[property].getLongitude());
+                        sw.WriteLine(lstProperties[property].getRoomType());
+                        sw.WriteLine(lstProperties[property].getPrice());
+                        sw.WriteLine(lstProperties[property].getMinDays());
+                        sw.WriteLine(lstProperties[property].getAvailability());
+                    }
+                }
+            }
+        }
+        #endregion writeFile
     }
 }
 

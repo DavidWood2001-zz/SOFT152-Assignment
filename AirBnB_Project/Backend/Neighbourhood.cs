@@ -50,6 +50,7 @@ namespace AirBnB_Project
         }
         public void setArrayProperties(Property[] inArrayProperties)
         {
+            Array.Resize(ref arrayProperties, inArrayProperties.Length);
             arrayProperties = inArrayProperties;
         }
 

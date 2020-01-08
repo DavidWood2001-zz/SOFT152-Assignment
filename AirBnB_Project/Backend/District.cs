@@ -11,7 +11,7 @@ namespace AirBnB_Project
         #region attributes
 
         string name;
-        readonly int numNeighbourhoods;
+        int numNeighbourhoods;
         Neighbourhood[] arrayNeighbourhoods;
 
         #endregion attributes
@@ -50,7 +50,14 @@ namespace AirBnB_Project
         }
         public void setArrayNeighbourhoods(Neighbourhood[] inArrayNeighbourhoods)
         {
+            Array.Resize(ref arrayNeighbourhoods, inArrayNeighbourhoods.Length);
             arrayNeighbourhoods = inArrayNeighbourhoods;
+            setNumNeighbourhoods();
+        }
+
+        private void setNumNeighbourhoods()
+        {
+            numNeighbourhoods = arrayNeighbourhoods.Length;
         }
 
         #endregion setters
